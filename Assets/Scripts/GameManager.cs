@@ -1,45 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int m_CurrentLevel = 0;
+
+    // This variable can be tweaked via Remote Config as more levels are available
+    private int m_MaxAvailableLevel = 0;
+
+    // TODO: Maybe just have it inside the Start method and not class-wide
+    AsyncOperationHandle<SceneInstance> m_SceneHandle;
+
+
+    private void OnDestroy()
     {
-        
+        // TODO: Check for null
+        //m_SceneHandle.Completed -= OnSceneLoaded;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGameplay()
     {
-        //TODO Replace this code with better loading handling
-        if(Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            Debug.Log("Trying to load scene 00");
-            Addressables.LoadSceneAsync("Level_00", UnityEngine.SceneManagement.LoadSceneMode.Additive, true).Completed += OnSceneLoaded;
-        }
+        Addressables.LoadSceneAsync("LoadingScene", UnityEngine.SceneManagement.LoadSceneMode.Single, true).Completed += OnSceneLoaded;
+    }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Debug.Log("Trying to load scene 00");
-            Addressables.LoadSceneAsync("Level_01", UnityEngine.SceneManagement.LoadSceneMode.Additive, true).Completed += OnSceneLoaded;
-        }
+    public void ExitGame()
+    {
+        Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, true).Completed += OnSceneLoaded;
+    }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            Debug.Log("Trying to load scene 02");
-            Addressables.LoadSceneAsync("Level_02", UnityEngine.SceneManagement.LoadSceneMode.Additive, true).Completed += OnSceneLoaded;
-        }
+    public void LevelCompleted()
+    {
+        //TODO: Replace this hardcoded code to increase the level
+        Debug.Log("Loading next level");
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            Debug.Log("Trying to load scene 03");
-            Addressables.LoadSceneAsync("Level_03", UnityEngine.SceneManagement.LoadSceneMode.Additive, true).Completed += OnSceneLoaded;
-        }
+        // Load the Loading scene
+        Addressables.LoadSceneAsync("LoadingScene", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+
+        //Addressables.UnloadSceneAsync(Scenema)
+        //LoadLevel(++currentLevel);
+    }
+
+    public void LoadLevel(int levelToLoad)
+    {
+        Debug.Log("Trying to load scene " + levelToLoad);
+        Addressables.LoadSceneAsync("Level_0"+ levelToLoad, UnityEngine.SceneManagement.LoadSceneMode.Additive, true).Completed += OnSceneLoaded;
     }
 
     void OnSceneLoaded(AsyncOperationHandle<SceneInstance> sceneHandle)

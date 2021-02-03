@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float m_MovementSpeed = 5.0f;
+
+    private bool m_HasKey = false;
 
     private Rigidbody m_Rigidbody;
 
@@ -14,6 +16,34 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void KeyCollected()
+    {
+        m_HasKey = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Cache the string value
+        if (other.CompareTag("Chest"))
+        {
+            Debug.Log("Triggered by a chest");
+            m_HasKey = true;
+        }
+
+        if (other.CompareTag("Door"))
+        {
+            Debug.Log("Triggered by a door");
+
+            if(m_HasKey)
+            {
+                Debug.Log("Opened the door");
+
+                //TODO: Cache this object search
+                GameObject.FindObjectOfType<GameManager>().LevelCompleted();
+            }
+        }
     }
 
     // Update is called once per frame

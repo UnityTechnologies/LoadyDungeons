@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -16,26 +14,13 @@ public class PlayerConfigurator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //TODO: Remove this random stuff, just for testing atm
+        SetHat(string.Format("Hat{0:00}", UnityEngine.Random.Range(0, 3)));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            SetHat("Hat00");
-        }
-
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            SetHat("Hat01");
-        }
-
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            SetHat("Hat02");
-        }
     }
 
     // TODO: Change the string parameter 
@@ -51,8 +36,13 @@ public class PlayerConfigurator : MonoBehaviour
         Debug.Log("Hat Instantiated");
     }
 
-    public void SetAccessory()
+    private void SetAccessory(string accessoryKey)
     {
-            
+        Addressables.InstantiateAsync(accessoryKey, m_AccessoryAnchor, false).Completed += OnAccessoryInstantiated;
+    }
+
+    private void OnAccessoryInstantiated(AsyncOperationHandle<GameObject> obj)
+    {
+        Debug.Log("Accessory Instantiated");
     }
 }
