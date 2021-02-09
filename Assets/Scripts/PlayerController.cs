@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Opened the door");
 
                 //TODO: Cache this object search
-                GameObject.FindObjectOfType<GameManager>().LevelCompleted();
+                GameManager.LoadLoadingScene();
             }
         }
     }
