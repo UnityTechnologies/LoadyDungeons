@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using System;
@@ -17,18 +16,22 @@ public class Loading : MonoBehaviour
     AsyncOperationHandle<SceneInstance> m_SceneHandle;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         //TODO: Change the  
         GameManager.LoadGameplayScene();
+
+        m_SceneHandle = GameManager.s_GameplaySceneHandle;
+        m_SceneHandle.Completed += OnSceneLoaded;
     }
 
-    //private void OnSceneLoaded(AsyncOperationHandle<SceneInstance> obj)
-    //{
-    //    // The scene is loaded, show the button and now turn the scene on?
-    //    m_PlayButton.SetActive(true);
-    //}
+    private void OnSceneLoaded(AsyncOperationHandle<SceneInstance> obj)
+    {
+        // The scene is loaded, show the button and now turn the scene on?
+        m_PlayButton.SetActive(true);
 
+        m_SceneHandle.Completed -= OnSceneLoaded;
+    }
 
     //public void LoadNextLevel()
     //{
@@ -38,8 +41,8 @@ public class Loading : MonoBehaviour
     //    }
     //}
 
-    //private void Update()
-    //{
-    //    m_LoadingSlider.value = m_SceneHandle.PercentComplete;
-    //}
+    private void Update()
+    {
+        m_LoadingSlider.value = m_SceneHandle.PercentComplete;
+    }
 }

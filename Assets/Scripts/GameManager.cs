@@ -5,55 +5,55 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 
 public class GameManager : MonoBehaviour
 {
-    public static int m_CurrentLevel = 0;
+    public static int s_CurrentLevel = 0;
 
     // This variable can be tweaked via Remote Config as more levels are available
     public int m_MaxAvailableLevel = 0;
 
-    // TODO: Maybe just have it inside the Start method and not class-wide
-    private static AsyncOperationHandle<SceneInstance> m_GameplaySceneHandle;
+    public static AsyncOperationHandle<SceneInstance> s_GameplaySceneHandle;
 
-    private static AsyncOperationHandle<SceneInstance> m_LoadingSceneHandle;
+    public static AsyncOperationHandle<SceneInstance> s_MainMenuSceneHandle;
+
+    public static AsyncOperationHandle<SceneInstance> s_LoadingSceneHandle;
 
 
-    //private void OnDestroy()
-    //{
-    //    // TODO: Check for null
-    //    //m_SceneHandle.Completed -= OnSceneLoaded;
-    //}
+    private void Start()
+    {
+        //TODO: subscribe and release handle
+        s_MainMenuSceneHandle = Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Additive, true);
+    }
 
     // Instance method to get called from a UI raised event
-    public void StartGameplay()
+    public static void StartGameplay()
     {
         LoadLoadingScene();
     }
 
     public static void LoadLoadingScene()
     {
-        // TODO: Add handle
-        m_LoadingSceneHandle = Addressables.LoadSceneAsync("LoadingScene", UnityEngine.SceneManagement.LoadSceneMode.Additive, false);
+        s_LoadingSceneHandle = Addressables.LoadSceneAsync("LoadingScene", UnityEngine.SceneManagement.LoadSceneMode.Additive, false);
 
-        m_LoadingSceneHandle.Completed += OnLoadingSceneLoaded;
+        s_LoadingSceneHandle.Completed += OnLoadingSceneLoaded;
     }
 
     public static void LoadGameplayScene()
     {
-        m_GameplaySceneHandle = Addressables.LoadSceneAsync("Level_0" + m_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Additive, false);
+        s_GameplaySceneHandle = Addressables.LoadSceneAsync("Level_0" + s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Additive, false);
 
-        m_CurrentLevel++;
+        s_CurrentLevel++;
 
-        m_GameplaySceneHandle.Completed += OnGameplayLevelLoaded;
+        s_GameplaySceneHandle.Completed += OnGameplayLevelLoaded;
     }
 
     public void ExitGame()
     {
         //Restore the first level to be played
-        m_CurrentLevel = 0;
+        s_CurrentLevel = 0;
 
         Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, true).Completed += OnLoadingSceneLoaded;
     }
 
-    public void LevelCompleted()
+    public static void LevelCompleted()
     {
         //TODO: Add handle
         LoadLoadingScene();
@@ -61,23 +61,35 @@ public class GameManager : MonoBehaviour
 
     static void OnLoadingSceneLoaded(AsyncOperationHandle<SceneInstance> sceneHandle)
     {
-        sceneHandle.Result.ActivateAsync();
+        s_LoadingSceneHandle.Result.ActivateAsync();
 
-        //if (m_GameplaySceneHandle.IsValid())
-        //{
-        //    Addressables.UnloadSceneAsync(m_GameplaySceneHandle);
-        //}
-        m_LoadingSceneHandle.Completed -= OnLoadingSceneLoaded;
+        if (s_GameplaySceneHandle.IsValid())
+        {
+            Debug.Log("Unloaded gameplay scene");   
+            Addressables.UnloadSceneAsync(s_GameplaySceneHandle, true);
+        }
+
+        if(s_MainMenuSceneHandle.IsValid())
+        {
+            Debug.Log("Unloaded mainmenu scene");
+            Addressables.UnloadSceneAsync(s_MainMenuSceneHandle, true);
+        }
+
+        s_LoadingSceneHandle.Completed -= OnLoadingSceneLoaded;
     }
 
     static void OnGameplayLevelLoaded(AsyncOperationHandle<SceneInstance> sceneHandle)
     {
-        sceneHandle.Result.ActivateAsync();
+        s_GameplaySceneHandle.Completed -= OnGameplayLevelLoaded;
+    }
 
-        if (m_GameplaySceneHandle.IsValid())
+    public static void ActivateGameplayScene()
+    {
+        s_GameplaySceneHandle.Result.ActivateAsync();
+
+        if (s_GameplaySceneHandle.IsValid())
         {
-            Addressables.UnloadSceneAsync(m_LoadingSceneHandle);
+            Addressables.UnloadSceneAsync(s_LoadingSceneHandle);
         }
-        //m_GameplaySceneHandle.Completed -= OnGameplayLevelLoaded;
     }
 }
