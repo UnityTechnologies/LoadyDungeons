@@ -1,12 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceProviders;
-using System;
 
 public class Loading : MonoBehaviour
 {
@@ -17,31 +12,30 @@ public class Loading : MonoBehaviour
     private GameObject m_PlayButton;
 
     // TODO: Maybe just have it inside the Start method and not class-wide
-    AsyncOperationHandle<SceneInstance> m_SceneHandle;
+    AsyncOperationHandle m_SceneHandle;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-            //TODO: Change the  
-            m_SceneHandle = Addressables.LoadSceneAsync("Level_00", UnityEngine.SceneManagement.LoadSceneMode.Single, false);
-
-            m_SceneHandle.Completed += OnSceneLoaded;
+        m_SceneHandle = Addressables.DownloadDependenciesAsync("Level_0" + GameManager.s_CurrentLevel);
+        m_SceneHandle.Completed += OnSceneLoaded;
     }
 
-    private void OnSceneLoaded(AsyncOperationHandle<SceneInstance> obj)
+    private void OnDisable()
+    {
+        m_SceneHandle.Completed -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(AsyncOperationHandle obj)
     {
         // The scene is loaded, show the button and now turn the scene on?
         m_PlayButton.SetActive(true);
     }
 
-
-    public void LoadNextLevel()
+    public void GoToNextLevel()
     {
-        if(m_SceneHandle.Status == AsyncOperationStatus.Succeeded)
-        {
-            m_SceneHandle.Result.ActivateAsync();
-        }
-    }
+        Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+     }
 
     private void Update()
     {
