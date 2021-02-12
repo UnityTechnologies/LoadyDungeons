@@ -17,6 +17,7 @@ MonoBehaviour:
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
   m_DisableCatalogUpdateOnStart: 0
+  m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
   m_maxConcurrentWebRequests: 500
   m_ContiguousBundles: 0
@@ -28,7 +29,6 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: d24f858948dc291438a038da81a078f1, type: 2}
   - {fileID: 11400000, guid: e12218f65150c634eb656f9d6e346519, type: 2}
-  - {fileID: 11400000, guid: f37e016d7e6302144b09f361f1e7bd17, type: 2}
   - {fileID: 11400000, guid: 48296570da7bb8d4ba488e16486e609a, type: 2}
   - {fileID: 11400000, guid: eae437177954e7e4b9cff065460e7f94, type: 2}
   - {fileID: 11400000, guid: 19ba1b756f6b5934c8630d510169c7ed, type: 2}

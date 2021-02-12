@@ -30,4 +30,11 @@ public class GameManager : MonoBehaviour
 
         LoadNextLevel();
     }
+
+    public static void ExitGameplay()
+    {
+        //TODO: Or load the Loading scene here
+        //TODO: Replace string with label
+        Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+    }
 }
