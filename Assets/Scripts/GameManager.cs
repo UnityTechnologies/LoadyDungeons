@@ -1,34 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceProviders;
 
 public class GameManager : MonoBehaviour
 {
+    // The curre
     public static int s_CurrentLevel = 0;
 
     // This variable can be tweaked via Remote Config as more levels are available
-    public int m_MaxAvailableLevel = 0;
-
-    public static AsyncOperationHandle<SceneInstance> s_GameplaySceneHandle;
-
-    public static AsyncOperationHandle<SceneInstance> s_MainMenuSceneHandle;
-
-    public static AsyncOperationHandle<SceneInstance> s_LoadingSceneHandle;
-
-
-    private void Start()
-    {
-        //TODO: subscribe and release handle
-        //s_MainMenuSceneHandle = Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Additive, true);
-    }
+    public static int s_MaxAvailableLevel = 4;
 
     public void ExitGame()
     {
         //Restore the first level to be played
         s_CurrentLevel = 0;
-
-        //Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, true).Completed += OnLoadingSceneLoaded;
     }
 
     public static void LoadNextLevel()
@@ -36,11 +20,21 @@ public class GameManager : MonoBehaviour
         Addressables.LoadSceneAsync("LoadingScene", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
     }
 
+    /// <summary>
     public static void LevelCompleted()
     {
-        //TODO: Check we are not going beyond the max scene
         s_CurrentLevel++;
 
+        // Just to make sure we don't try to go beyond the allowed number of levels.
+        s_CurrentLevel = s_CurrentLevel % s_MaxAvailableLevel;
+
         LoadNextLevel();
+    }
+
+    public static void ExitGameplay()
+    {
+        //TODO: Or load the Loading scene here
+        //TODO: Replace string with label
+        Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
     }
 }
