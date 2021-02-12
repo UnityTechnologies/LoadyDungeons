@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody m_Rigidbody;
 
+    [SerializeField]
+    private Animator m_AnimatorController;
+
+    private int m_VelocityHash = Animator.StringToHash("Velocity");
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +33,7 @@ public class PlayerController : MonoBehaviour
         // Cache the string value
         if (other.CompareTag("Chest"))
         {
-            Debug.Log("Triggered by a chest");
-            m_HasKey = true;
+            KeyCollected();
         }
 
         if (other.CompareTag("Door"))
@@ -49,28 +53,30 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow))
+        float xMovement = m_MovementSpeed * Input.GetAxis("Horizontal");
+        float zMovement = m_MovementSpeed * Input.GetAxis("Vertical");
+
+        // TODO: Refactor this
+        if(xMovement < 0)
         {
-            var targetPosition = transform.position + Vector3.left * m_MovementSpeed * Time.deltaTime;
-            m_Rigidbody.MovePosition(targetPosition);
+            m_Rigidbody.rotation = Quaternion.Euler(0, -90, 0);
+        }
+        else if(xMovement > 0)
+        {
+            m_Rigidbody.rotation = Quaternion.Euler(0, 90, 0);
+        }
+        else if(zMovement < 0)
+        {
+            m_Rigidbody.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else if(zMovement > 0)
+        {
+            m_Rigidbody.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            var targetPosition = transform.position + Vector3.right * m_MovementSpeed * Time.deltaTime;
-            m_Rigidbody.MovePosition(targetPosition);
-        }
+        m_Rigidbody.velocity =  new Vector3(xMovement, 0, zMovement);
 
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            var targetPosition = transform.position + Vector3.forward * m_MovementSpeed * Time.deltaTime;
-            m_Rigidbody.MovePosition(targetPosition);
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            var targetPosition = transform.position + Vector3.back * m_MovementSpeed * Time.deltaTime;
-            m_Rigidbody.MovePosition(targetPosition);
-        }
+        //
+        m_AnimatorController.SetFloat(m_VelocityHash, m_Rigidbody.velocity.magnitude);
     }
 }
