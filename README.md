@@ -1,4 +1,4 @@
-![Loads Dungeons V04](https://user-images.githubusercontent.com/263776/108000843-7e5ec780-6fb0-11eb-8db1-82f963d587a8.png)
+![Loads Dungeons V04 (Small)](https://user-images.githubusercontent.com/263776/108001038-0513a480-6fb1-11eb-84a4-5792aa95e418.png)
 
 Demo for CCD+Addressables training and workshops.
 
