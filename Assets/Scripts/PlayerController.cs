@@ -8,12 +8,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float m_MovementSpeed = 5.0f;
 
+    [SerializeField]
+    private Animator m_AnimatorController;
+
     private bool m_HasKey = false;
 
     private Rigidbody m_Rigidbody;
-
-    [SerializeField]
-    private Animator m_AnimatorController;
 
     private int m_VelocityHash = Animator.StringToHash("Velocity");
 

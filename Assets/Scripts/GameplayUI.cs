@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class GameplayUI : MonoBehaviour
 {
-    public Button m_ExitButton;
+    [SerializeField]
+    private Button m_ExitButton;
 
-    // Start is called before the first frame update
     private void OnEnable()
     {
         m_ExitButton.onClick.AddListener(GameManager.ExitGameplay);

@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UISetup : MonoBehaviour
 {
-    public Button m_StartButton;
+    [SerializeField]
+    private Button m_StartButton;
 
-    // Start is called before the first frame update
-    private void Start()
+    private void OnEnable()
     {
         m_StartButton.onClick.AddListener(GameManager.LoadNextLevel);
     }
