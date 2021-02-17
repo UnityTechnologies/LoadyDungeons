@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public static void LoadNextLevel()
     {
+        //TODO: Show old workflow
+
         Addressables.LoadSceneAsync("LoadingScene", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
     }
 
