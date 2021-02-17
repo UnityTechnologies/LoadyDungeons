@@ -3,7 +3,6 @@ using UnityEngine.AddressableAssets;
 
 public class GameManager : MonoBehaviour
 {
-    // The curre
     public static int s_CurrentLevel = 0;
 
     // This variable can be tweaked via Remote Config as more levels are available
@@ -11,7 +10,6 @@ public class GameManager : MonoBehaviour
 
     public void ExitGame()
     {
-        //Restore the first level to be played
         s_CurrentLevel = 0;
     }
 
