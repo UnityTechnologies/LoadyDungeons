@@ -7,7 +7,6 @@ public class PlayerConfigurator : MonoBehaviour
     [SerializeField]
     private Transform m_HatAnchor;
 
-    // Start is called before the first frame update
     void Start()
     {
         //TODO: Remove this random stuff, just for testing atm
@@ -17,13 +16,23 @@ public class PlayerConfigurator : MonoBehaviour
     // TODO: Change the string parameter 
     public void SetHat(string hatKey)
     {
+        // We are using the InstantiateAsync function on the Addressables API, the non-Addressables way 
+        // looks something like the following line, however, this version is not Asynchronous
+        // GameObject.Instantiate(prefabToInstantiate);
+
         Addressables.InstantiateAsync(hatKey, m_HatAnchor, false).Completed += OnHatInstantiated;
     }
 
-    // TOASK: Where to unsubscribe 
+    private void OnDisable()
+    {
+        // TODO: Unsubscribe
+    }
 
+    // TOASK: Where to unsubscribe 
     private void OnHatInstantiated(AsyncOperationHandle<GameObject> obj)
     {
         Debug.Log("Hat Instantiated");
+
+
     }
 }

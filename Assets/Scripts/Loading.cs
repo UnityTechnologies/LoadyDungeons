@@ -5,7 +5,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Loading : MonoBehaviour
 {
-    private bool m_LoadingComplete = false;
+    //private bool m_LoadingComplete = false;
 
     [SerializeField]
     private Slider m_LoadingSlider;
@@ -14,7 +14,7 @@ public class Loading : MonoBehaviour
     private GameObject m_PlayButton;
 
     // TODO: Maybe just have it inside the Start method and not class-wide
-    AsyncOperationHandle m_SceneHandle;
+    private AsyncOperationHandle m_SceneHandle;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -49,6 +49,4 @@ public class Loading : MonoBehaviour
             m_LoadingSlider.value = m_SceneHandle.PercentComplete;
         }
     }
-
-    //Make the oncomplete 
 }
