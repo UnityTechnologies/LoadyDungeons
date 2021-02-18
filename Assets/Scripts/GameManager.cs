@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.AddressableAssets;
 
 public class GameManager : MonoBehaviour
 {
     public static int s_CurrentLevel = 0;
 
-    // This variable can be tweaked via Remote Config as more levels are available
     public static int s_MaxAvailableLevel = 4;
 
     public void ExitGame()
@@ -35,8 +33,6 @@ public class GameManager : MonoBehaviour
 
     public static void ExitGameplay()
     {
-        //TODO: Or load the Loading scene here
-        //TODO: Replace string with label
         Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
     }
 }

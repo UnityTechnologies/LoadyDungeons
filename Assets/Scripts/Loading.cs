@@ -5,7 +5,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Loading : MonoBehaviour
 {
-    //private bool m_LoadingComplete = false;
+    private AsyncOperationHandle m_SceneHandle;
 
     [SerializeField]
     private Slider m_LoadingSlider;
@@ -13,10 +13,6 @@ public class Loading : MonoBehaviour
     [SerializeField]
     private GameObject m_PlayButton;
 
-    // TODO: Maybe just have it inside the Start method and not class-wide
-    private AsyncOperationHandle m_SceneHandle;
-
-    // Start is called before the first frame update
     void OnEnable()
     {
         m_SceneHandle = Addressables.DownloadDependenciesAsync("Level_0" + GameManager.s_CurrentLevel);
@@ -30,23 +26,21 @@ public class Loading : MonoBehaviour
 
     private void OnSceneLoaded(AsyncOperationHandle obj)
     {
-        // The scene is loaded, show the button and now turn the scene on?
-        m_PlayButton.SetActive(true);
-
-        //m_LoadingComplete = true;
+        // We show the UI button once the scene is successfully downloaded      
+        if(obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            m_PlayButton.SetActive(true);
+        }
     }
 
     public void GoToNextLevel()
     {
         Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
-     }
+    }
 
     private void Update()
     {
-        // TODO: Comment the range of the percentcomplete
-        //if (!m_LoadingComplete)
-        {
-            m_LoadingSlider.value = m_SceneHandle.PercentComplete;
-        }
+        // We don't need to check for this value every single frame, and certainly not after the scene has been loaded
+        m_LoadingSlider.value = m_SceneHandle.PercentComplete;
     }
 }

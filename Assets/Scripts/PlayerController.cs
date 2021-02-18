@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -44,13 +42,11 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Opened the door");
 
-                //TODO: Cache this object search
                 GameManager.LevelCompleted();
             }
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         float xMovement = m_MovementSpeed * Input.GetAxis("Horizontal");
@@ -76,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
         m_Rigidbody.velocity =  new Vector3(xMovement, 0, zMovement);
 
-        //
+        // We use the velocity of the character's rigidbody to drive the animation
         m_AnimatorController.SetFloat(m_VelocityHash, m_Rigidbody.velocity.magnitude);
     }
 }

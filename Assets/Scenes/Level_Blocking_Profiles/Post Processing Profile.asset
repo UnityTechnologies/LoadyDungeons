@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: PostProcessing Profile 1
+  m_Name: Post Processing Profile
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 253630274829840993}
