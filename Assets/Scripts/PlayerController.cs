@@ -15,10 +15,17 @@ public class PlayerController : MonoBehaviour
 
     private int m_VelocityHash = Animator.StringToHash("Velocity");
 
+    private Camera m_MainCamera;
+    
+    private RaycastHit m_HitInfo;
+    
+    const float k_MinMovementDistance = 1.2f;
+
     // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_MainCamera = Camera.main;
     }
 
     private void KeyCollected()
@@ -49,30 +56,51 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float xMovement = m_MovementSpeed * Input.GetAxis("Horizontal");
-        float zMovement = m_MovementSpeed * Input.GetAxis("Vertical");
-
-        // TODO: Refactor this
-        if(xMovement < 0)
+#if UNITY_EDITOR
+        if (Input.GetMouseButton(0))
         {
-            m_Rigidbody.rotation = Quaternion.Euler(0, -90, 0);
+            MoveToPosition(Input.mousePosition);
         }
-        else if(xMovement > 0)
+        else
         {
-            m_Rigidbody.rotation = Quaternion.Euler(0, 90, 0);
-        }
-        else if(zMovement < 0)
-        {
-            m_Rigidbody.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        else if(zMovement > 0)
-        {
-            m_Rigidbody.rotation = Quaternion.Euler(0, 0, 0);
+            m_Rigidbody.velocity = Vector3.zero;
         }
 
-        m_Rigidbody.velocity =  new Vector3(xMovement, 0, zMovement);
-
-        // We use the velocity of the character's rigidbody to drive the animation
+#elif UNITY_IOS || UNITY_ANDROID
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            MoveToPosition(touch.position);
+        }
+        else
+        {
+            m_Rigidbody.velocity = Vector3.zero;
+        }
+#endif
+        // apply aniamtion
         m_AnimatorController.SetFloat(m_VelocityHash, m_Rigidbody.velocity.magnitude);
+    }
+
+    void MoveToPosition(Vector2 screenPosition)
+    {
+        if (Physics.Raycast(m_MainCamera.ScreenPointToRay(screenPosition), out m_HitInfo))
+        {
+            // don't move if touching close to character
+            if (Vector3.Distance(m_Rigidbody.position, m_HitInfo.point) > k_MinMovementDistance)
+            {
+                // rotation
+                m_Rigidbody.transform.LookAt(m_HitInfo.point, Vector3.up);
+                // lock rotation to y 
+                Vector3 eulerAngle = m_Rigidbody.transform.eulerAngles;
+                m_Rigidbody.transform.eulerAngles = new Vector3(0, eulerAngle.y, 0);
+
+                // calculate move direction vector
+                Vector3 movementDirection = m_HitInfo.point - m_Rigidbody.position;
+                movementDirection.Normalize();
+
+                // apply calculated velocity
+                m_Rigidbody.velocity = movementDirection * m_MovementSpeed;
+            }
+        }
     }
 }
