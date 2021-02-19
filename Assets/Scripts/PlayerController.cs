@@ -29,9 +29,11 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Cache the string value
-        if (other.CompareTag("Chest"))
+        if (other.CompareTag("Key"))
         {
             KeyCollected();
+
+            Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Door"))
