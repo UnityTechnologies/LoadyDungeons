@@ -7,23 +7,36 @@ public class PlayerConfigurator : MonoBehaviour
     [SerializeField]
     private Transform m_HatAnchor;
 
-    // Start is called before the first frame update
+    private AsyncOperationHandle m_HatLoadingHandle;
+
     void Start()
     {
-        //TODO: Remove this random stuff, just for testing atm
+        // At the moment, we randomly assign a Hat, but ideally, we have the unlocked hat property saved
         SetHat(string.Format("Hat{0:00}", UnityEngine.Random.Range(0, 4)));
     }
 
     // TODO: Change the string parameter 
     public void SetHat(string hatKey)
     {
-        Addressables.InstantiateAsync(hatKey, m_HatAnchor, false).Completed += OnHatInstantiated;
+        // We are using the InstantiateAsync function on the Addressables API, the non-Addressables way 
+        // looks something like the following line, however, this version is not Asynchronous
+        // GameObject.Instantiate(prefabToInstantiate);
+        m_HatLoadingHandle = Addressables.InstantiateAsync(hatKey, m_HatAnchor, false);
+
+        m_HatLoadingHandle.Completed += OnHatInstantiated;
     }
 
-    // TOASK: Where to unsubscribe 
-
-    private void OnHatInstantiated(AsyncOperationHandle<GameObject> obj)
+    private void OnDisable()
     {
-        Debug.Log("Hat Instantiated");
+        m_HatLoadingHandle.Completed -= OnHatInstantiated;
+    }
+
+    private void OnHatInstantiated(AsyncOperationHandle obj)
+    {
+        // We can check for the status of the InstantiationAsync operation: Failed, Succeeded or None
+        if(obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            Debug.Log("Hat instantiated successfully");
+        }
     }
 }
