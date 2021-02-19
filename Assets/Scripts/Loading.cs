@@ -5,6 +5,8 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Loading : MonoBehaviour
 {
+    private bool m_LoadingComplete = false;
+
     [SerializeField]
     private Slider m_LoadingSlider;
 
@@ -30,6 +32,8 @@ public class Loading : MonoBehaviour
     {
         // The scene is loaded, show the button and now turn the scene on?
         m_PlayButton.SetActive(true);
+
+        //m_LoadingComplete = true;
     }
 
     public void GoToNextLevel()
@@ -39,6 +43,12 @@ public class Loading : MonoBehaviour
 
     private void Update()
     {
-        m_LoadingSlider.value = m_SceneHandle.PercentComplete;
+        // TODO: Comment the range of the percentcomplete
+        //if (!m_LoadingComplete)
+        {
+            m_LoadingSlider.value = m_SceneHandle.PercentComplete;
+        }
     }
+
+    //Make the oncomplete 
 }
