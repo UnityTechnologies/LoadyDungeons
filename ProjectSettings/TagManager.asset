@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Chest
   - Door
+  - Key
   layers:
   - Default
   - TransparentFX

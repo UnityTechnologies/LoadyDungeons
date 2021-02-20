@@ -5,6 +5,9 @@ public class GameplayUI : MonoBehaviour
 {
     [SerializeField]
     private Button m_ExitButton;
+ 
+    [SerializeField]
+    private Image m_KeyIndicator;
 
     private void OnEnable()
     {
