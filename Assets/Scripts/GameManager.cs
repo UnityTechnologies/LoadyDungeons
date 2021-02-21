@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public static int s_MaxAvailableLevel = 4;
 
+    public static int s_ActiveHat;
+
     public void ExitGame()
     {
         s_CurrentLevel = 0;
