@@ -58,9 +58,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-# Asset Bundles
-*.bundle
-
 # Crashlytics generated file
 crashlytics-build.properties
 
