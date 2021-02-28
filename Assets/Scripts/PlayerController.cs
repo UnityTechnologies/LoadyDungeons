@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator m_AnimatorController;
 
+    [SerializeField]
+    private LayerMask m_InputCollisionLayer;
+
     private bool m_HasKey = false;
 
     private Rigidbody m_Rigidbody;
@@ -83,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
     void MoveToPosition(Vector2 screenPosition)
     {
-        if (Physics.Raycast(m_MainCamera.ScreenPointToRay(screenPosition), out m_HitInfo))
+        if (Physics.Raycast(m_MainCamera.ScreenPointToRay(screenPosition), out m_HitInfo, Mathf.Infinity, m_InputCollisionLayer))
         {
             // don't move if touching close to character
             if (Vector3.Distance(m_Rigidbody.position, m_HitInfo.point) > k_MinMovementDistance)
