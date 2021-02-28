@@ -750,7 +750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 349756766}
   m_Layer: 0
-  m_Name: Environment-------- (1)
+  m_Name: Environment--------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,7 +938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444362480}
   m_Layer: 0
-  m_Name: Gameplay----------- (1)
+  m_Name: Gameplay-----------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1174,7 +1174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757166547}
   m_Layer: 0
-  m_Name: UI---------------- (1)
+  m_Name: UI----------------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1527,7 +1527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1162473984}
   m_Layer: 0
-  m_Name: Rendering--------- (1)
+  m_Name: Rendering---------
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
