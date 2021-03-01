@@ -41,6 +41,6 @@ public class Loading : MonoBehaviour
     private void Update()
     {
         // We don't need to check for this value every single frame, and certainly not after the scene has been loaded
-        m_LoadingSlider.value = m_SceneHandle.PercentComplete;
+        m_LoadingSlider.value = m_SceneHandle.GetDownloadStatus().Percent;
     }
 }
