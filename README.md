@@ -1,8 +1,10 @@
 ![LD](https://user-images.githubusercontent.com/263776/110165036-dde21300-7db7-11eb-8f49-e7745ed44b35.png)
 
-Loady Dungeons is a **demo** intended onboard users into using the [Addressable Assets](https://docs.unity3d.com/Packages/com.unity.addressables@0.3/manual/index.html) package and the Unity [Cloud Content Delivery](https://unity.com/products/cloud-content-delivery) service.
+Loady Dungeons is a **demo** intended to onboard users into using the [Addressable Assets](https://docs.unity3d.com/Packages/com.unity.addressables@0.3/manual/index.html) package and the Unity [Cloud Content Delivery](https://unity.com/products/cloud-content-delivery) service.
 
-If you want the latest version of the project, download it from [here](https://github.com/UnityTechnologies/LoadyDungeons/releases/tag/ws0.4.0).
+There's a lot of room for code and asset optimizations, however we went with what we thought it was clearer. 
+
+If you want the latest version of the project, you can download it from [here](https://github.com/UnityTechnologies/LoadyDungeons/releases/tag/ws0.4.0).
 
 ### Gameplay
 The gameplay is pretty simple, you control _Dino_ on her quest to discover all the dungeons in the world. Touch anywhere on the floor and she will move there. Find the chest, get the key and open the door to go to the next level. 
