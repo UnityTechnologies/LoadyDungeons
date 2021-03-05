@@ -1,6 +1,4 @@
-<p align="center">
-  <img width="480" height="480" src="https://user-images.githubusercontent.com/263776/108434264-fc1f0f00-720c-11eb-8678-a2dab7a27e96.png">
-</p>
+![LD](https://user-images.githubusercontent.com/263776/110165036-dde21300-7db7-11eb-8f49-e7745ed44b35.png)
 
 Loady Dungeons is a simple **demo** intended to teach the basics of Addressables and Unity's Cloud Content Delivery.
 
