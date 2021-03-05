@@ -2,6 +2,8 @@
 
 Loady Dungeons is a simple **demo** intended to teach the basics of Addressables and Unity's Cloud Content Delivery.
 
+If you want the latest version of the project, download it from [here](https://github.com/UnityTechnologies/LoadyDungeons/releases/tag/ws0.4.0).
+
 ### Prerequisites
 * Unity Version: 2019.4 LTS
 * Addressables Package: 1.16.16
