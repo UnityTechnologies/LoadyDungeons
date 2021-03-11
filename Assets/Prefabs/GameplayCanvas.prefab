@@ -318,6 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExitButton: {fileID: 7702242263277782301}
+  m_KeyIndicator: {fileID: 7702242263051669514}
+  m_GameManager: {fileID: 11400000, guid: a9f6da264584558478e57f0d26b9befb, type: 2}
 --- !u!1 &7877503227642946891
 GameObject:
   m_ObjectHideFlags: 0

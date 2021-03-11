@@ -9,13 +9,16 @@ public class GameplayUI : MonoBehaviour
     [SerializeField]
     private Image m_KeyIndicator;
 
+    [SerializeField]
+    private GameManagerSO m_GameManager;
+
     private void OnEnable()
     {
-        m_ExitButton.onClick.AddListener(GameManager.ExitGameplay);
+        m_ExitButton.onClick.AddListener(m_GameManager.ExitGameplay);
     }
 
     private void OnDisable()
     {
-        m_ExitButton.onClick.RemoveListener(GameManager.ExitGameplay);
+        m_ExitButton.onClick.RemoveListener(m_GameManager.ExitGameplay);
     }
 }

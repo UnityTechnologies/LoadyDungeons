@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask m_InputCollisionLayer;
 
+    [SerializeField]
+    private GameManagerSO m_GameManager;
+
     private bool m_HasKey = false;
 
     private Rigidbody m_Rigidbody;
@@ -52,7 +55,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Opened the door");
 
-                GameManager.LevelCompleted();
+                m_GameManager.LevelCompleted();
             }
         }
     }
