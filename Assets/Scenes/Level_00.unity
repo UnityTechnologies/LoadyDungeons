@@ -410,21 +410,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7702242263051669513, guid: 11482ef509975be43bcaf454f9771aed,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.012939453
-      objectReference: {fileID: 0}
-    - target: {fileID: 7702242263277782300, guid: 11482ef509975be43bcaf454f9771aed,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -2.6000366
-      objectReference: {fileID: 0}
-    - target: {fileID: 7702242263277782300, guid: 11482ef509975be43bcaf454f9771aed,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.30004883
-      objectReference: {fileID: 0}
     - target: {fileID: 7702242264122354704, guid: 11482ef509975be43bcaf454f9771aed,
         type: 3}
       propertyPath: m_Pivot.x
@@ -535,25 +520,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8629169230329452818, guid: 11482ef509975be43bcaf454f9771aed,
-        type: 3}
-      propertyPath: m_KeyIndicator
-      value: 
-      objectReference: {fileID: 122326358}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11482ef509975be43bcaf454f9771aed, type: 3}
---- !u!114 &122326358 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7702242263051669514, guid: 11482ef509975be43bcaf454f9771aed,
-    type: 3}
-  m_PrefabInstance: {fileID: 122326357}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &155182938
 GameObject:
   m_ObjectHideFlags: 0
