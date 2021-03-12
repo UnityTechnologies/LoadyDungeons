@@ -10,7 +10,7 @@ If you want the latest version of the project, you can download it from [here](h
 The gameplay is pretty simple, you control _Dino_ on her quest to discover all the dungeons in the world. Touch anywhere on the floor and she will move there. Find the chest, get the key and open the door to go to the next level. 
 
 ### Prerequisites
-* Unity Version: 2019.3 LTS
+* Unity Version: 2020.3 LTS
 * Addressables Package: 1.16.16
 
 ### More Resources
