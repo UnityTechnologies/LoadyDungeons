@@ -8,7 +8,8 @@ public class GameManagerSO : ScriptableObject
 
     public int s_MaxAvailableLevel = 4;
 
-    public int s_ActiveHat;
+    // The value of -1 means no hats have been purchased
+    public int s_ActiveHat = -1;
 
     public void ExitGame()
     {
@@ -37,5 +38,10 @@ public class GameManagerSO : ScriptableObject
     public void ExitGameplay()
     {
         Addressables.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+    }
+
+    public void LoadStore()
+    {
+        Addressables.LoadSceneAsync("Store", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
     }
 }

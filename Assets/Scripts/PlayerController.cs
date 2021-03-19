@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     
     const float k_MinMovementDistance = 1.2f;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -83,7 +82,7 @@ public class PlayerController : MonoBehaviour
             m_Rigidbody.velocity = Vector3.zero;
         }
 #endif
-        // apply aniamtion
+        // apply animation
         m_AnimatorController.SetFloat(m_VelocityHash, m_Rigidbody.velocity.magnitude);
     }
 
