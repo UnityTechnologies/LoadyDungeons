@@ -21,4 +21,9 @@ public class GameplayUI : MonoBehaviour
     {
         m_ExitButton.onClick.RemoveListener(m_GameManager.ExitGameplay);
     }
+
+    public void KeyCollected()
+    {
+        m_KeyIndicator.color = Color.white;
+    }
 }

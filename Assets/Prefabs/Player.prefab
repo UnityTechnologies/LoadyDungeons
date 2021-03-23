@@ -126,7 +126,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8083381679980500539
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_AnimatorController: {fileID: 214216475}
   m_InputCollisionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_GameManager: {fileID: 11400000, guid: a9f6da264584558478e57f0d26b9befb, type: 2}
 --- !u!1001 &1171686176522753923
 PrefabInstance:
