@@ -65,7 +65,6 @@ public class Store : MonoBehaviour
 
     public void NextHat()
     {
-
     }
 
     public void PreviousHat()

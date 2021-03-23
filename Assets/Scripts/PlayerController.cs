@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     private void KeyCollected()
     {
         m_HasKey = true;
+
+        //TODO: Put this outside of the PlayerController
+        GameObject.FindObjectOfType<GameplayUI>().KeyCollected();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,6 +46,9 @@ public class PlayerController : MonoBehaviour
         // Cache the string value
         if (other.CompareTag("Chest"))
         {
+            // TODO: Maybe cache the getcomponent read, although it is only read once
+            other.gameObject.GetComponent<Chest>().Open();
+
             KeyCollected();
         }
 
@@ -54,7 +60,9 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Opened the door");
 
-                m_GameManager.LevelCompleted();
+                other.gameObject.GetComponent<Door>().Open();
+
+                //m_GameManager.LevelCompleted();
             }
         }
     }
