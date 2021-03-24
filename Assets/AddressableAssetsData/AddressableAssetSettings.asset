@@ -29,8 +29,8 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: d24f858948dc291438a038da81a078f1, type: 2}
   - {fileID: 11400000, guid: e12218f65150c634eb656f9d6e346519, type: 2}
-  - {fileID: 11400000, guid: 48296570da7bb8d4ba488e16486e609a, type: 2}
   - {fileID: 11400000, guid: eae437177954e7e4b9cff065460e7f94, type: 2}
+  - {fileID: 11400000, guid: 48296570da7bb8d4ba488e16486e609a, type: 2}
   - {fileID: 11400000, guid: 19ba1b756f6b5934c8630d510169c7ed, type: 2}
   - {fileID: 11400000, guid: c786bd9d6355bfe428406afe3af5aa7a, type: 2}
   - {fileID: 11400000, guid: 1df0e3d8f53088f48b7375ffaa8ae6c2, type: 2}
@@ -66,9 +66,23 @@ MonoBehaviour:
       - m_Id: cbf5669a55f1c3a4da2e6b95df63fce9
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
-        m_Value: ServerData/[BuildTarget]
+        m_Value: AssetBundles/[BuildTarget]
       - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: https://ceded976-9f8b-45f6-9555-266c5abf1251.client-api.unity3dusercontent.com/client_api/v1/buckets/1257381c-f1d6-4244-9d65-4ee28add3a01/release_by_badge/latest/entry_by_path/content/?path=
+        m_Value: https://ceded976-9f8b-45f6-9555-266c5abf1251.client-api.unity3dusercontent.com/client_api/v1/buckets/1bf3f1f3-2541-4117-8d3d-5e165067610f/release_by_badge/latest/entry_by_path/content/?path=
+    - m_InheritedParent: 
+      m_Id: 402745a40a208a14c950786bb9ef578f
+      m_ProfileName: Android Development
+      m_Values:
+      - m_Id: 3ffd4f9b06965ca4682662e73a7894c8
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: c152bb92211f3854baed928e47c45883
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: cbf5669a55f1c3a4da2e6b95df63fce9
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
+        m_Value: AssetBundles/[BuildTarget]
+      - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
+        m_Value: https://ceded976-9f8b-45f6-9555-266c5abf1251.client-api.unity3dusercontent.com/client_api/v1/buckets/1bf3f1f3-2541-4117-8d3d-5e165067610f/release_by_badge/latest/entry_by_path/content/?path=
     m_ProfileEntryNames:
     - m_Id: 3ffd4f9b06965ca4682662e73a7894c8
       m_Name: BuildTarget
@@ -102,7 +116,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d89c3e88a4995cd4ea9308f23fc3aefa, type: 2}
   - {fileID: 11400000, guid: c3e9811d49fad99468e755a4c043de51, type: 2}
   - {fileID: 11400000, guid: ba618cb335f06414f80a6fe0946f0bce, type: 2}
-  m_ActiveProfileId: 70a5a665e703a974cb424df99c72f798
+  m_ActiveProfileId: 402745a40a208a14c950786bb9ef578f
   m_HostingServicesManager:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}
