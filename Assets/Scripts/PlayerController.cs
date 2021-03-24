@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -62,9 +63,17 @@ public class PlayerController : MonoBehaviour
 
                 other.gameObject.GetComponent<Door>().Open();
 
-                //m_GameManager.LevelCompleted();
+                // TODO: Change this number to a member variable
+                StartCoroutine(LevelCompleted());
             }
         }
+    }
+
+    private IEnumerator LevelCompleted()
+    {
+        yield return new WaitForSeconds(1.75f);
+
+        m_GameManager.LevelCompleted();
     }
 
     void Update()
