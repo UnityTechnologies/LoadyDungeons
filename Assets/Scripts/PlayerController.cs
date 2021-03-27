@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Cache the string value
+        //TODO: Cache the string value
         if (other.CompareTag("Chest"))
         {
             // TODO: Maybe cache the getcomponent read, although it is only read once
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator LevelCompleted()
     {
-        yield return new WaitForSeconds(1.75f);
+        yield return new WaitForSeconds(2.15f);
 
         m_GameManager.LevelCompleted();
     }
