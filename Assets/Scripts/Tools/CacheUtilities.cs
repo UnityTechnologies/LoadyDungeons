@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 // Based on this script by kimsama: https://gist.github.com/kimsama/5530104
 public class CacheTools : ScriptableObject
 {
@@ -16,10 +17,5 @@ public class CacheTools : ScriptableObject
             Debug.LogWarning("Cache was in use.");
         }
     }
-
-    [MenuItem("Tools/Cache/Clean Store")]
-    public static void CleanStore()
-    {
-        // TODO: Clean up the current selected store
-    }
 }
+#endif
