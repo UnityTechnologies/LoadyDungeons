@@ -12,6 +12,12 @@ public class GameManagerSO : ScriptableObject
     // The value of -1 means no hats have been purchased
     public int s_ActiveHat = -1;
 
+    public void OnEnable()
+    {
+        // When we go to the 
+        s_CurrentLevel = 0;
+    }
+
     public void ExitGame()
     {
         s_CurrentLevel = 0;
