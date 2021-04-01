@@ -33,11 +33,6 @@ public class PlayerConfigurator : MonoBehaviour
         m_HatLoadingHandle.Completed += OnHatInstantiated;
     }
 
-    private void OnDisable()
-    {
-        m_HatLoadingHandle.Completed -= OnHatInstantiated;
-    }
-
     private void OnHatInstantiated(AsyncOperationHandle obj)
     {
         // We can check for the status of the InstantiationAsync operation: Failed, Succeeded or None
@@ -45,5 +40,7 @@ public class PlayerConfigurator : MonoBehaviour
         {
             Debug.Log("Hat instantiated successfully");
         }
+
+        m_HatLoadingHandle.Completed -= OnHatInstantiated;
     }
 }

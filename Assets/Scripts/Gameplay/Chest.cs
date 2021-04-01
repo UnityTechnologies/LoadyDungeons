@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -12,6 +13,12 @@ public class Chest : MonoBehaviour
     [SerializeField]
     private float m_ParticlePlayDelayTime = 0.75f;
 
+    [SerializeField]
+    private GameObject m_Key;
+
+    [SerializeField]
+    private float m_KeyDestroyDelayTime = 0.75f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +31,15 @@ public class Chest : MonoBehaviour
         m_Animator.SetTrigger("Open");
 
         StartCoroutine(PlayParticles());
+
+        StartCoroutine(DestroyKey());
+    }
+
+    private IEnumerator DestroyKey()
+    {
+        yield return new WaitForSeconds(m_KeyDestroyDelayTime);
+
+        m_Key.SetActive(false);
     }
 
     private IEnumerator PlayParticles()

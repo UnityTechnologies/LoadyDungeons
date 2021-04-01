@@ -5063,7 +5063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ParticleSystem: {fileID: 5116346864126037614}
-  m_ParticlePlayDelayTime: 0.55
+  m_ParticlePlayDelayTime: 0.65
+  m_Key: {fileID: 1303052936717085872}
+  m_KeyDestroyDelayTime: 1.15
 --- !u!1001 &5116346864751513382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5248,6 +5250,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36ebe18f236e1de46bc8992b07028de4, type: 3}
+--- !u!1 &1303052936717085872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7024289968253537756, guid: 36ebe18f236e1de46bc8992b07028de4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8317608924234293612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1828055803584411146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7651785289792739174, guid: 36ebe18f236e1de46bc8992b07028de4,
