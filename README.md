@@ -2,9 +2,7 @@
 
 # Loady Dungeons
 
-Loady Dungeons is a **demo game** intended to onboard users into using the [Addressable Assets](https://docs.unity3d.com/Packages/com.unity.addressables@0.3/manual/index.html) package and the Unity [Cloud Content Delivery](https://unity.com/products/cloud-content-delivery) service.
-
-Although there is a lot of room for code and asset optimizations, the demo is designed to demonstrate the uses of the Addressables and CCD tools. 
+Loady Dungeons is a **demo game** intended to onboard users into using the [Addressable Assets](https://docs.unity3d.com/Packages/com.unity.addressables@0.3/manual/index.html) package and the Unity [Cloud Content Delivery](https://unity.com/products/cloud-content-delivery) service. Although there is a lot of room for code and asset optimizations, the demo is designed to demonstrate the uses of the Addressables and CCD tools. 
 
 If you are following the video tutorial, you can download the starting project [here](https://github.com/UnityTechnologies/LoadyDungeons/releases/tag/ws0.4.0).
 
