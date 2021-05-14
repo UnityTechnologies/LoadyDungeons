@@ -21,5 +21,5 @@ The project uses a simple approach for managing the bundles with the assets. Eac
 ![Asset Architecture](https://user-images.githubusercontent.com/263776/110168293-9611ba80-7dbc-11eb-9945-417a16c3386d.jpg)
 
 ### More Resources
-* If you want to watch the step by step guide, go to our [video](https://www.youtube.com/watch?v=zadjp30LTMs)
-* For a written guide on how to get started with Cloud Content Delivery, visit the [following link](https://create.unity3d.com/CCD-technical-workshop?utm_source=demand-gen&utm_medium=video&utm_campaign=asset-links-operate-gms&utm_content=build-vs-buy-ccd-webinar)
+* If you’d like to learn more about this demo, and how to use Cloud Content Delivery, [click here](https://www.youtube.com/watch?v=zadjp30LTMs). 
+* If you’d like to watch the full Technical Workshop for Cloud Content Delivery, [click here](https://create.unity3d.com/CCD-technical-workshop?utm_source=demand-gen&utm_medium=video&utm_campaign=asset-links-operate-gms&utm_content=build-vs-buy-ccd-webinar). 
