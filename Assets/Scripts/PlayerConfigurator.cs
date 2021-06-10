@@ -8,7 +8,7 @@ public class PlayerConfigurator : MonoBehaviour
     private Transform m_HatAnchor;
 
     [SerializeField]
-    private GameManagerSO m_GameManager;
+    //private GameManagerSO m_GameManager;
 
     private AsyncOperationHandle m_HatLoadingHandle;
 
@@ -16,10 +16,10 @@ public class PlayerConfigurator : MonoBehaviour
     {
         // TODO: Implement a m_GameManager.HatsUnlocked method on the GameManager script
         //If the condition is met, then a hat has been unlocked
-        if(m_GameManager.s_ActiveHat >= 0)
-        {
-            SetHat(string.Format("Hat{0:00}", m_GameManager.s_ActiveHat));
-        }
+        //if(m_GameManager.s_ActiveHat >= 0)
+        //{
+        //    SetHat(string.Format("Hat{0:00}", m_GameManager.s_ActiveHat));
+        //}
     }
 
     // TODO: Change the string parameter 

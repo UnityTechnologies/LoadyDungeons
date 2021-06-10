@@ -18,9 +18,6 @@ public class Store : MonoBehaviour
     private Button m_RightArrowButton;
 
     [SerializeField]
-    private GameManagerSO m_GameManager;
-
-    [SerializeField]
     private Transform m_HatAttachPoint;
 
     private AsyncOperationHandle m_DownloadHatsHandle;
@@ -31,12 +28,12 @@ public class Store : MonoBehaviour
     void Start()
     {
         // TODO: Check if the hats have been unlocked
-        if(m_GameManager.s_ActiveHat >= 0)
-        {
-            ShowHatSelectionUI();
+        //if(m_GameManager.s_ActiveHat >= 0)
+        //{
+        //    ShowHatSelectionUI();
 
-            m_HatHandle = Addressables.InstantiateAsync("Hat0" + m_GameManager.s_ActiveHat, m_HatAttachPoint);
-        }
+        //    m_HatHandle = Addressables.InstantiateAsync("Hat0" + m_GameManager.s_ActiveHat, m_HatAttachPoint);
+        //}
     }
 
     public void PurchaseHats()
@@ -55,10 +52,10 @@ public class Store : MonoBehaviour
 
             // TODO: Avoid assigning directly the int to the gamemanager property
             // Save the first hat
-            m_GameManager.s_ActiveHat = 0;
+            //m_GameManager.s_ActiveHat = 0;
 
             //TODO: Position it on the Dino's head
-            m_HatHandle = Addressables.InstantiateAsync("Hat0" + m_GameManager.s_ActiveHat, m_HatAttachPoint);
+            //m_HatHandle = Addressables.InstantiateAsync("Hat0" + m_GameManager.s_ActiveHat, m_HatAttachPoint);
 
             ShowHatSelectionUI();
         }
@@ -71,16 +68,16 @@ public class Store : MonoBehaviour
         // Clear the current selected hat
         Addressables.ReleaseInstance(m_HatHandle);
 
-        if(m_GameManager.s_ActiveHat < 3)
-        {
-            ++m_GameManager.s_ActiveHat;
-        }
-        else
-        {
-            m_GameManager.s_ActiveHat = 0;
-        }
+        //if(m_GameManager.s_ActiveHat < 3)
+        //{
+        //    ++m_GameManager.s_ActiveHat;
+        //}
+        //else
+        //{
+        //    m_GameManager.s_ActiveHat = 0;
+        //}
 
-        m_HatHandle = Addressables.InstantiateAsync("Hat0" + m_GameManager.s_ActiveHat, m_HatAttachPoint);
+        //m_HatHandle = Addressables.InstantiateAsync("Hat0" + m_GameManager.s_ActiveHat, m_HatAttachPoint);
     }
 
     public void PreviousHat()
@@ -88,16 +85,16 @@ public class Store : MonoBehaviour
         // Clear the current selected hat
         Addressables.ReleaseInstance(m_HatHandle);
 
-        if (m_GameManager.s_ActiveHat > 1)
-        {
-            --m_GameManager.s_ActiveHat;
-        }
-        else
-        {
-            m_GameManager.s_ActiveHat = 3;
-        }
+        //if (m_GameManager.s_ActiveHat > 1)
+        //{
+        //    --m_GameManager.s_ActiveHat;
+        //}
+        //else
+        //{
+        //    m_GameManager.s_ActiveHat = 3;
+        //}
 
-        m_HatHandle = Addressables.InstantiateAsync("Hat0" + m_GameManager.s_ActiveHat, m_HatAttachPoint);
+        //m_HatHandle = Addressables.InstantiateAsync("Hat0" + m_GameManager.s_ActiveHat, m_HatAttachPoint);
     }
 
     public void ClearAddressablesCache()
@@ -107,7 +104,7 @@ public class Store : MonoBehaviour
             Debug.Log("Cleared Cache Successfully");
 
             // Reset the hat 
-            m_GameManager.s_ActiveHat = -1;
+            //m_GameManager.s_ActiveHat = -1;
 
             HideHatSelectionUI();
 

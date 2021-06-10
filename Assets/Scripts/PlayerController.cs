@@ -13,9 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask m_InputCollisionLayer;
 
-    [SerializeField]
-    private GameManagerSO m_GameManager;
-
     private bool m_HasKey = false;
 
     private Rigidbody m_Rigidbody;
@@ -39,7 +36,6 @@ public class PlayerController : MonoBehaviour
         m_HasKey = true;
 
         //TODO: Put this outside of the PlayerController
-        GameObject.FindObjectOfType<GameplayUI>().KeyCollected();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,13 +68,11 @@ public class PlayerController : MonoBehaviour
     private IEnumerator LevelCompleted()
     {
         yield return new WaitForSeconds(2.15f);
-
-        m_GameManager.LevelCompleted();
     }
 
     void Update()
     {
-#if UNITY_EDITOR
+#if UNITY_WINDOWS || UNITY_STANDALONE_OSX
         if (Input.GetMouseButton(0))
         {
             MoveToPosition(Input.mousePosition);
