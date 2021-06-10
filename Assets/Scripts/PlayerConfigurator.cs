@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
+//using UnityEngine.AddressableAssets;
+//using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class PlayerConfigurator : MonoBehaviour
 {
     [SerializeField]
     private Transform m_HatAnchor;
 
-    [SerializeField]
+    //[SerializeField]
     //private GameManagerSO m_GameManager;
 
-    private AsyncOperationHandle m_HatLoadingHandle;
+    //private AsyncOperationHandle m_HatLoadingHandle;
 
     void Start()
     {
@@ -28,11 +28,11 @@ public class PlayerConfigurator : MonoBehaviour
         // We are using the InstantiateAsync function on the Addressables API, the non-Addressables way 
         // looks something like the following line, however, this version is not Asynchronous
         // GameObject.Instantiate(prefabToInstantiate);
-        m_HatLoadingHandle = Addressables.InstantiateAsync(hatKey, m_HatAnchor, false);
+        //m_HatLoadingHandle = Addressables.InstantiateAsync(hatKey, m_HatAnchor, false);
 
-        m_HatLoadingHandle.Completed += OnHatInstantiated;
+        //m_HatLoadingHandle.Completed += OnHatInstantiated;
     }
-
+    /*
     private void OnHatInstantiated(AsyncOperationHandle obj)
     {
         // We can check for the status of the InstantiationAsync operation: Failed, Succeeded or None
@@ -43,4 +43,5 @@ public class PlayerConfigurator : MonoBehaviour
 
         m_HatLoadingHandle.Completed -= OnHatInstantiated;
     }
+    */
 }

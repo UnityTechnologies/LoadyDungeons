@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
+//using UnityEngine.AddressableAssets;
+//using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Store : MonoBehaviour
 {
@@ -20,9 +20,9 @@ public class Store : MonoBehaviour
     [SerializeField]
     private Transform m_HatAttachPoint;
 
-    private AsyncOperationHandle m_DownloadHatsHandle;
+    //private AsyncOperationHandle m_DownloadHatsHandle;
 
-    private AsyncOperationHandle m_HatHandle;
+    //private AsyncOperationHandle m_HatHandle;
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +39,12 @@ public class Store : MonoBehaviour
     public void PurchaseHats()
     {
         // TODO: Download the assets and then assign the first hat to the character
-        m_DownloadHatsHandle = Addressables.DownloadDependenciesAsync("Hat00");
+        //m_DownloadHatsHandle = Addressables.DownloadDependenciesAsync("Hat00");
 
-        m_DownloadHatsHandle.Completed += OnHatsDownloaded;
+        //m_DownloadHatsHandle.Completed += OnHatsDownloaded;
     }
 
+    /*
     private void OnHatsDownloaded(AsyncOperationHandle obj)
     {
         if(m_DownloadHatsHandle.Status == AsyncOperationStatus.Succeeded)
@@ -138,4 +139,5 @@ public class Store : MonoBehaviour
         m_LeftArrowButton.gameObject.SetActive(false);
         m_RightArrowButton.gameObject.SetActive(false);
     }
+    */
 }
