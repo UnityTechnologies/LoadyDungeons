@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Hats
+  m_EditorClassIdentifier: 
+  m_GroupName: Hats
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ac6628a4992e55d49b0477679d25d76f
+  m_SerializeEntries:
+  - m_GUID: b53baa10142cbb346a47ab071d32889a
+    m_Address: Hat00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 8249111256857059732, guid: b53baa10142cbb346a47ab071d32889a,
+      type: 3}
+    m_TargetAsset: {fileID: 8249111256857059732, guid: b53baa10142cbb346a47ab071d32889a,
+      type: 3}
+  - m_GUID: 6e65281e8a345ff4ea1b73f2a1578a6d
+    m_Address: Hat01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 5166224616317297372, guid: 6e65281e8a345ff4ea1b73f2a1578a6d,
+      type: 3}
+    m_TargetAsset: {fileID: 5166224616317297372, guid: 6e65281e8a345ff4ea1b73f2a1578a6d,
+      type: 3}
+  - m_GUID: 6c93cb6413eaf5f46bbe190dbbad2651
+    m_Address: Hat02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 6774698051306351897, guid: 6c93cb6413eaf5f46bbe190dbbad2651,
+      type: 3}
+    m_TargetAsset: {fileID: 6774698051306351897, guid: 6c93cb6413eaf5f46bbe190dbbad2651,
+      type: 3}
+  - m_GUID: 434c1413ad6a76842a3a98e6a21aefa5
+    m_Address: Hat03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 6774698051306351897, guid: 434c1413ad6a76842a3a98e6a21aefa5,
+      type: 3}
+    m_TargetAsset: {fileID: 6774698051306351897, guid: 434c1413ad6a76842a3a98e6a21aefa5,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 661d48ea9271a404cae43a9e2517e23a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7f73f2c9927c8324184dcba0505171f4, type: 2}
+    - {fileID: 11400000, guid: 2e59bc8292f95904f87e11cf3d178ab9, type: 2}
