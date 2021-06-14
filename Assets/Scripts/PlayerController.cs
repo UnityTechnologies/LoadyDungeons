@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-#if UNITY_WINDOWS || UNITY_STANDALONE_OSX
+#if UNITY_WINDOWS || UNITY_STANDALONE_OSX || UNITY_EDITOR
         if (Input.GetMouseButton(0))
         {
             MoveToPosition(Input.mousePosition);
@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
         {
             m_Rigidbody.velocity = Vector3.zero;
         }
-
 #elif UNITY_IOS || UNITY_ANDROID
         if (Input.touchCount > 0)
         {
@@ -94,7 +93,9 @@ public class PlayerController : MonoBehaviour
         }
 #endif
         // apply animation
-        m_AnimatorController.SetFloat(m_VelocityHash, m_Rigidbody.velocity.magnitude);
+
+        if(m_AnimatorController != null)
+            m_AnimatorController.SetFloat(m_VelocityHash, m_Rigidbody.velocity.magnitude);
     }
 
     void MoveToPosition(Vector2 screenPosition)
