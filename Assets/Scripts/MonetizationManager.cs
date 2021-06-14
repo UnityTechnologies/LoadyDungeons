@@ -1,18 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 public class MonetizationManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    string m_GameId = "4170594";
+    bool m_TestMode = true;
+    string m_SurfacingId = "bannerPlacement";
+
     void Start()
     {
-        
+        Advertisement.Initialize(m_GameId, m_TestMode);
+
+        StartCoroutine(ShowBannerWhenInitialized());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator ShowBannerWhenInitialized()
     {
-        
+        while (!Advertisement.isInitialized)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        Advertisement.Banner.Show(m_SurfacingId);
     }
 }
