@@ -1,44 +1,44 @@
-﻿using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
+﻿//using UnityEngine;
+//using UnityEngine.AddressableAssets;
+//using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class PlayerConfigurator : MonoBehaviour
-{
-    [SerializeField]
-    private Transform m_HatAnchor;
+//public class PlayerConfigurator : MonoBehaviour
+//{
+//    [SerializeField]
+//    private Transform m_HatAnchor;
 
-    //[SerializeField]
-    //private GameManagerSO m_GameManager;
+//    //[SerializeField]
+//    //private GameManagerSO m_GameManager;
 
-    private AsyncOperationHandle m_HatLoadingHandle;
+//    private AsyncOperationHandle m_HatLoadingHandle;
 
-    void Start()
-    {
-        // TODO: Implement a m_GameManager.HatsUnlocked method on the GameManager script
+//    void Start()
+//    {
+//        // TODO: Implement a m_GameManager.HatsUnlocked method on the GameManager script
 
-        SetHat(string.Format("Hat{0:00}", Random.Range(0,3)));
-    }
+//        SetHat(string.Format("Hat{0:00}", Random.Range(0,3)));
+//    }
 
-    // TODO: Change the string parameter 
-    public void SetHat(string hatKey)
-    {
-        // We are using the InstantiateAsync function on the Addressables API, the non-Addressables way 
-        // looks something like the following line, however, this version is not Asynchronous
-        // GameObject.Instantiate(prefabToInstantiate);
-        m_HatLoadingHandle = Addressables.InstantiateAsync(hatKey, m_HatAnchor, false);
+//    // TODO: Change the string parameter 
+//    public void SetHat(string hatKey)
+//    {
+//        // We are using the InstantiateAsync function on the Addressables API, the non-Addressables way 
+//        // looks something like the following line, however, this version is not Asynchronous
+//        // GameObject.Instantiate(prefabToInstantiate);
+//        m_HatLoadingHandle = Addressables.InstantiateAsync(hatKey, m_HatAnchor, false);
 
-        m_HatLoadingHandle.Completed += OnHatInstantiated;
-    }
+//        m_HatLoadingHandle.Completed += OnHatInstantiated;
+//    }
 
-    private void OnHatInstantiated(AsyncOperationHandle obj)
-    {
-        // We can check for the status of the InstantiationAsync operation: Failed, Succeeded or None
-        if (obj.Status == AsyncOperationStatus.Succeeded)
-        {
-            Debug.Log("Hat instantiated successfully");
-        }
+//    private void OnHatInstantiated(AsyncOperationHandle obj)
+//    {
+//        // We can check for the status of the InstantiationAsync operation: Failed, Succeeded or None
+//        if (obj.Status == AsyncOperationStatus.Succeeded)
+//        {
+//            Debug.Log("Hat instantiated successfully");
+//        }
 
-        m_HatLoadingHandle.Completed -= OnHatInstantiated;
-    }
+//        m_HatLoadingHandle.Completed -= OnHatInstantiated;
+//    }
 
-}
+//}

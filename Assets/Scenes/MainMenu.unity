@@ -783,19 +783,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1893815543}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: a9f6da264584558478e57f0d26b9befb, type: 2}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: LoadNextLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1893815543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,19 +976,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2018716881}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: a9f6da264584558478e57f0d26b9befb, type: 2}
-        m_TargetAssemblyTypeName: GameManagerSO, Assembly-CSharp
-        m_MethodName: LoadStore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2018716881
 MonoBehaviour:
   m_ObjectHideFlags: 0
