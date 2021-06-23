@@ -23,18 +23,6 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 0394d87db3df9354f8b37fc762233e0d
-    m_Address: MainMenu
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 917ae24daebbd8749bd2e0e6d25e873c
-    m_Address: Store
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 102900000, guid: 917ae24daebbd8749bd2e0e6d25e873c, type: 3}
-    m_TargetAsset: {fileID: 102900000, guid: 917ae24daebbd8749bd2e0e6d25e873c, type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 661d48ea9271a404cae43a9e2517e23a, type: 2}
   m_SchemaSet:

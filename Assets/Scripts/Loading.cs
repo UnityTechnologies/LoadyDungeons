@@ -13,12 +13,9 @@ public class Loading : MonoBehaviour
     [SerializeField]
     private GameObject m_PlayButton;
 
-    [SerializeField]
-    private GameManagerSO m_GameManager;
-
     void OnEnable()
     {
-        m_SceneHandle = Addressables.DownloadDependenciesAsync("Level_0" + m_GameManager.s_CurrentLevel);
+        m_SceneHandle = Addressables.DownloadDependenciesAsync("Level_0" + GameManager.s_CurrentLevel);
         m_SceneHandle.Completed += OnSceneLoaded;
     }
 
@@ -38,12 +35,12 @@ public class Loading : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        Addressables.LoadSceneAsync("Level_0" + m_GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+        Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
     }
 
     private void Update()
     {
         // We don't need to check for this value every single frame, and certainly not after the scene has been loaded
-        m_LoadingSlider.value = m_SceneHandle.GetDownloadStatus().Percent;
+        m_LoadingSlider.value = m_SceneHandle.PercentComplete;
     }
 }

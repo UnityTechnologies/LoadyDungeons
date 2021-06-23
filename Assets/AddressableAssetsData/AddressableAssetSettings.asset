@@ -54,7 +54,7 @@ MonoBehaviour:
       - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
         m_Value: ServerData/[BuildTarget]
       - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: http://localhost/[BuildTarget]
+        m_Value: REMOTE_LOAD_PATH
     - m_InheritedParent: 
       m_Id: 70a5a665e703a974cb424df99c72f798
       m_ProfileName: Development Profile
@@ -68,21 +68,7 @@ MonoBehaviour:
       - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
         m_Value: AssetBundles/[BuildTarget]
       - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: https://ceded976-9f8b-45f6-9555-266c5abf1251.client-api.unity3dusercontent.com/client_api/v1/buckets/1bf3f1f3-2541-4117-8d3d-5e165067610f/release_by_badge/latest/entry_by_path/content/?path=
-    - m_InheritedParent: 
-      m_Id: 402745a40a208a14c950786bb9ef578f
-      m_ProfileName: Android Development
-      m_Values:
-      - m_Id: 3ffd4f9b06965ca4682662e73a7894c8
-        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: c152bb92211f3854baed928e47c45883
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: cbf5669a55f1c3a4da2e6b95df63fce9
-        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
-      - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
-        m_Value: AssetBundles/[BuildTarget]
-      - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: https://ceded976-9f8b-45f6-9555-266c5abf1251.client-api.unity3dusercontent.com/client_api/v1/buckets/1bf3f1f3-2541-4117-8d3d-5e165067610f/release_by_badge/latest/entry_by_path/content/?path=
+        m_Value: https://3b661f05-c122-47ca-b631-b7874d47786b.client-api.unity3dusercontent.com/client_api/v1/buckets/e3c84746-5515-4973-b7db-9b6501de8756/release_by_badge/latest/entry_by_path/content/?path
     m_ProfileEntryNames:
     - m_Id: 3ffd4f9b06965ca4682662e73a7894c8
       m_Name: BuildTarget

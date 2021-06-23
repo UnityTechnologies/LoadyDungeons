@@ -7,19 +7,12 @@ public class PlayerConfigurator : MonoBehaviour
     [SerializeField]
     private Transform m_HatAnchor;
 
-    [SerializeField]
-    private GameManagerSO m_GameManager;
-
     private AsyncOperationHandle m_HatLoadingHandle;
 
     void Start()
     {
-        // TODO: Implement a m_GameManager.HatsUnlocked method on the GameManager script
-        //If the condition is met, then a hat has been unlocked
-        if(m_GameManager.s_ActiveHat >= 0)
-        {
-            SetHat(string.Format("Hat{0:00}", m_GameManager.s_ActiveHat));
-        }
+        // At the moment, we randomly assign a Hat, but ideally, we have the unlocked hat property saved
+        SetHat(string.Format("Hat{0:00}", UnityEngine.Random.Range(0, 4)));
     }
 
     // TODO: Change the string parameter 
@@ -33,6 +26,11 @@ public class PlayerConfigurator : MonoBehaviour
         m_HatLoadingHandle.Completed += OnHatInstantiated;
     }
 
+    private void OnDisable()
+    {
+        m_HatLoadingHandle.Completed -= OnHatInstantiated;
+    }
+
     private void OnHatInstantiated(AsyncOperationHandle obj)
     {
         // We can check for the status of the InstantiationAsync operation: Failed, Succeeded or None
@@ -40,7 +38,5 @@ public class PlayerConfigurator : MonoBehaviour
         {
             Debug.Log("Hat instantiated successfully");
         }
-
-        m_HatLoadingHandle.Completed -= OnHatInstantiated;
     }
 }

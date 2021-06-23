@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -9,12 +8,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Animator m_AnimatorController;
-
-    [SerializeField]
-    private LayerMask m_InputCollisionLayer;
-
-    [SerializeField]
-    private GameManagerSO m_GameManager;
 
     private bool m_HasKey = false;
 
@@ -28,6 +21,7 @@ public class PlayerController : MonoBehaviour
     
     const float k_MinMovementDistance = 1.2f;
 
+    // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -37,20 +31,16 @@ public class PlayerController : MonoBehaviour
     private void KeyCollected()
     {
         m_HasKey = true;
-
-        //TODO: Put this outside of the PlayerController
-        GameObject.FindObjectOfType<GameplayUI>().KeyCollected();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //TODO: Cache the string value
-        if (other.CompareTag("Chest"))
+        // Cache the string value
+        if (other.CompareTag("Key"))
         {
-            // TODO: Maybe cache the getcomponent read, although it is only read once
-            other.gameObject.GetComponent<Chest>().Open();
-
             KeyCollected();
+
+            Destroy(other.gameObject);
         }
 
         if (other.CompareTag("Door"))
@@ -61,19 +51,9 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Opened the door");
 
-                other.gameObject.GetComponent<Door>().Open();
-
-                // TODO: Change this number to a member variable
-                StartCoroutine(LevelCompleted());
+                GameManager.LevelCompleted();
             }
         }
-    }
-
-    private IEnumerator LevelCompleted()
-    {
-        yield return new WaitForSeconds(2.15f);
-
-        m_GameManager.LevelCompleted();
     }
 
     void Update()
@@ -99,13 +79,13 @@ public class PlayerController : MonoBehaviour
             m_Rigidbody.velocity = Vector3.zero;
         }
 #endif
-        // apply animation
+        // apply aniamtion
         m_AnimatorController.SetFloat(m_VelocityHash, m_Rigidbody.velocity.magnitude);
     }
 
     void MoveToPosition(Vector2 screenPosition)
     {
-        if (Physics.Raycast(m_MainCamera.ScreenPointToRay(screenPosition), out m_HitInfo, Mathf.Infinity, m_InputCollisionLayer))
+        if (Physics.Raycast(m_MainCamera.ScreenPointToRay(screenPosition), out m_HitInfo))
         {
             // don't move if touching close to character
             if (Vector3.Distance(m_Rigidbody.position, m_HitInfo.point) > k_MinMovementDistance)
