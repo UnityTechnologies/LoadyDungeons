@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_STANDALONE
         if (Input.GetMouseButton(0))
         {
             MoveToPosition(Input.mousePosition);
@@ -105,24 +105,44 @@ public class PlayerController : MonoBehaviour
 
     void MoveToPosition(Vector2 screenPosition)
     {
-        if (Physics.Raycast(m_MainCamera.ScreenPointToRay(screenPosition), out m_HitInfo, Mathf.Infinity, m_InputCollisionLayer))
+        Ray ray = m_MainCamera.ScreenPointToRay(screenPosition);
+
+        if (Physics.Raycast(ray, out m_HitInfo, Mathf.Infinity, m_InputCollisionLayer))
         {
-            // don't move if touching close to character
-            if (Vector3.Distance(m_Rigidbody.position, m_HitInfo.point) > k_MinMovementDistance)
+            ApplyMoveToPosition();
+        }
+		// Did we click on something else thats not the ground? If so find where that object is
+        else if (Physics.Raycast(ray, out m_HitInfo, Mathf.Infinity))
+        {
+            Ray downRay = new Ray(m_HitInfo.point, Vector3.down);
+
+            // And now cast down to find the ground point to move to
+            if (Physics.Raycast(downRay, out m_HitInfo, Mathf.Infinity, m_InputCollisionLayer))
             {
-                // rotation
-                m_Rigidbody.transform.LookAt(m_HitInfo.point, Vector3.up);
-                // lock rotation to y 
-                Vector3 eulerAngle = m_Rigidbody.transform.eulerAngles;
-                m_Rigidbody.transform.eulerAngles = new Vector3(0, eulerAngle.y, 0);
-
-                // calculate move direction vector
-                Vector3 movementDirection = m_HitInfo.point - m_Rigidbody.position;
-                movementDirection.Normalize();
-
-                // apply calculated velocity
-                m_Rigidbody.velocity = movementDirection * m_MovementSpeed;
+                ApplyMoveToPosition();
             }
         }
+    }
+
+    void ApplyMoveToPosition()
+    {
+        // don't move if touching close to character
+        if (Vector3.Distance(m_Rigidbody.position, m_HitInfo.point) < k_MinMovementDistance)
+        {
+            return;
+        }
+
+        // rotation
+        m_Rigidbody.transform.LookAt(m_HitInfo.point, Vector3.up);
+        // lock rotation to y 
+        Vector3 eulerAngle = m_Rigidbody.transform.eulerAngles;
+        m_Rigidbody.transform.eulerAngles = new Vector3(0, eulerAngle.y, 0);
+
+        // calculate move direction vector
+        Vector3 movementDirection = m_HitInfo.point - m_Rigidbody.position;
+        movementDirection.Normalize();
+
+        // apply calculated velocity
+        m_Rigidbody.velocity = movementDirection * m_MovementSpeed;
     }
 }
