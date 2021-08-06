@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EnablePreviewPackages: 0
-  m_EnablePackageDependencies: 0
+  m_EnablePackageDependencies: 1
   m_AdvancedSettingsExpanded: 1
   m_ScopedRegistriesSettingsExpanded: 1
   oneTimeWarningShown: 0
@@ -24,20 +24,28 @@ MonoBehaviour:
     m_Scopes: []
     m_IsDefault: 1
     m_Capabilities: 7
-  m_UserSelectedRegistryName: 
+  - m_Id: scoped:Internal Candidates Registry
+    m_Name: Internal Candidates Registry
+    m_Url: https://artifactory.prd.it.unity3d.com/artifactory/api/npm/upm-candidates
+    m_Scopes:
+    - com.unity.services
+    m_IsDefault: 0
+    m_Capabilities: 0
+  m_UserSelectedRegistryName: Internal Candidates Registry
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_ErrorMessage: 
     m_Original:
-      m_Id: 
-      m_Name: 
-      m_Url: 
-      m_Scopes: []
+      m_Id: scoped:Internal Candidates Registry
+      m_Name: Internal Candidates Registry
+      m_Url: https://artifactory.prd.it.unity3d.com/artifactory/api/npm/upm-candidates
+      m_Scopes:
+      - com.unity.services
       m_IsDefault: 0
       m_Capabilities: 0
     m_Modified: 0
-    m_Name: 
-    m_Url: 
+    m_Name: Internal Candidates Registry
+    m_Url: https://artifactory.prd.it.unity3d.com/artifactory/api/npm/upm-candidates
     m_Scopes:
-    - 
+    - com.unity.services
     m_SelectedScopeIndex: 0
