@@ -6,7 +6,6 @@ Loady Dungeons is a **demo game** intended to onboard users into using the [Addr
 
 :computer: If you are following the video tutorial, you can download the starting project [here](https://github.com/UnityTechnologies/LoadyDungeons/releases/tag/ws0.4.0).
 
-:construction: We are still working on the project, if you have any suggestion please let us know.
 
 ### Gameplay
 The gameplay is simple: you control _Dino_ on her quest to discover all the dungeons in the world. Touch anywhere on the floor of the map, and she will move to that spot. Find the chest, get the key and open the door to go to the next level.
