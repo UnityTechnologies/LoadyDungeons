@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private LayerMask m_InputCollisionLayer;
 
     [SerializeField]
-    private GameManagerSO m_GameManager;
+    private GameManager m_GameManager;
 
     private bool m_HasKey = false;
 
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(2.15f);
 
-        m_GameManager.LevelCompleted();
+        GameManager.LevelCompleted();
     }
 
     void Update()

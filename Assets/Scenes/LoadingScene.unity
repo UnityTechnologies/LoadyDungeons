@@ -340,7 +340,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LoadingSlider: {fileID: 1880866496}
   m_PlayButton: {fileID: 1956782723}
-  m_GameManager: {fileID: 11400000, guid: a9f6da264584558478e57f0d26b9befb, type: 2}
 --- !u!1 &813797211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,7 +1036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1956782724
 RectTransform:
   m_ObjectHideFlags: 0
