@@ -1,11 +1,10 @@
 {
   "dependencies": {
     "com.unity.2d.sprite": "1.0.0",
-    "com.unity.addressables": "1.16.19",
+    "com.unity.addressables": "1.18.9",
     "com.unity.ide.visualstudio": "2.0.11",
-    "com.unity.remote-config": "2.0.1",
     "com.unity.render-pipelines.universal": "11.0.0",
-    "com.unity.scriptablebuildpipeline": "1.16.1",
+    "com.unity.scriptablebuildpipeline": "1.19.0",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.ugui": "1.0.0",
     "com.unity.modules.ai": "1.0.0",

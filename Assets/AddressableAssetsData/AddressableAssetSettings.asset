@@ -13,18 +13,28 @@ MonoBehaviour:
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
   m_DefaultGroup: 908b434eb41181040a446a89e71b95e0
+  m_CachedHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
+  m_CatalogRequestsTimeout: 0
   m_DisableCatalogUpdateOnStart: 0
   m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
+  m_NonRecursiveBuilding: 1
   m_maxConcurrentWebRequests: 500
   m_ContiguousBundles: 0
+  m_ShaderBundleNaming: 0
+  m_ShaderBundleCustomNaming: 
+  m_MonoScriptBundleNaming: 0
+  m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
     m_Id: 
   m_RemoteCatalogLoadPath:
     m_Id: 
+  m_ContentStateBuildPath: 
   m_overridePlayerVersion: 
   m_GroupAssets:
   - {fileID: 11400000, guid: d24f858948dc291438a038da81a078f1, type: 2}
@@ -57,7 +67,7 @@ MonoBehaviour:
         m_Value: http://localhost/[BuildTarget]
     - m_InheritedParent: 
       m_Id: 70a5a665e703a974cb424df99c72f798
-      m_ProfileName: Development Profile
+      m_ProfileName: Desktop Development
       m_Values:
       - m_Id: 3ffd4f9b06965ca4682662e73a7894c8
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
@@ -68,7 +78,7 @@ MonoBehaviour:
       - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
         m_Value: AssetBundles/[BuildTarget]
       - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: https://ceded976-9f8b-45f6-9555-266c5abf1251.client-api.unity3dusercontent.com/client_api/v1/buckets/1bf3f1f3-2541-4117-8d3d-5e165067610f/release_by_badge/latest/entry_by_path/content/?path=
+        m_Value: https://6425f585-dcf3-48ce-9486-732852d3a59e.client-api.unity3dusercontent.com/client_api/v1/buckets/5f809432-faf8-4691-a1f7-8923c0c83ee7/release_by_badge/latest/entry_by_path/content/?path=
     - m_InheritedParent: 
       m_Id: 402745a40a208a14c950786bb9ef578f
       m_ProfileName: Android Development
@@ -82,7 +92,7 @@ MonoBehaviour:
       - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
         m_Value: AssetBundles/[BuildTarget]
       - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: https://ceded976-9f8b-45f6-9555-266c5abf1251.client-api.unity3dusercontent.com/client_api/v1/buckets/1bf3f1f3-2541-4117-8d3d-5e165067610f/release_by_badge/latest/entry_by_path/content/?path=
+        m_Value: https://6425f585-dcf3-48ce-9486-732852d3a59e.client-api.unity3dusercontent.com/client_api/v1/buckets/9f8dba23-dd36-42a1-92d8-e3073f2adb9d/release_by_badge/latest/entry_by_path/content/?path=
     m_ProfileEntryNames:
     - m_Id: 3ffd4f9b06965ca4682662e73a7894c8
       m_Name: BuildTarget
