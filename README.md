@@ -24,5 +24,5 @@ The project uses a simple approach for managing the bundles with the assets. Eac
 
 ### More Resources
 * If you’d like to learn more about this demo, and how to use Cloud Content Delivery, [click here](https://www.youtube.com/watch?v=zadjp30LTMs). 
-* If you’d like to watch the full Technical Workshop for Cloud Content Delivery, [click here](https://create.unity3d.com/CCD-technical-workshop?utm_source=demand-gen&utm_medium=video&utm_campaign=asset-links-operate-gms&utm_content=build-vs-buy-ccd-webinar). 
+* If you’d like to watch the full Technical Workshop for Cloud Content Delivery, [click here](https://www.youtube.com/watch?v=5IvPPI7YnwU). 
 * If you want to learn more about how to optimize the usage of Addressables, read [this post](https://blog.unity.com/technology/tales-from-the-optimization-trenches-saving-memory-with-addressables) by Patrick DeVarney. 
