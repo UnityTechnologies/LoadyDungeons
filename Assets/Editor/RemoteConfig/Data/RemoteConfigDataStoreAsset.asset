@@ -12,15 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"1963ea04-11e1-42f2-a465-719abb178dcc\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"Selected_Hat\",\r\n      \"type\": \"int\",\r\n     
-    \"value\": 2\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"1963ea04-11e1-42f2-a465-719abb178dcc\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"Selected_Hat\",\r\n      \"type\": \"int\",\r\n     
-    \"value\": 2\r\n    }\r\n  }\r\n]"
-  _environments: "[\r\n  {\r\n    \"projectId\": \"0202ccd8-4b57-4a91-bc6c-0693895d42f2\",\r\n   
-    \"name\": \"Production\",\r\n    \"id\": \"5bd6cbe9-1b79-4a51-b22b-59f547eaaf1a\",\r\n   
-    \"createdAt\": \"2021-07-28T17:54:40Z\",\r\n    \"updatedAt\": \"2021-07-28T17:54:40Z\",\r\n   
-    \"isDefault\": true\r\n  }\r\n]"
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"58c07200-35c2-4634-bf4f-39146dcc02bf\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"ActiveHat\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 2\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"42f0f0fc-9033-4a15-a568-7233f15888a6\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"Language\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Spanish\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"a7634527-3c54-480b-bd70-ec0688fa7b66\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"CharacterSize\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"2266b4e3-a714-4c7c-90cb-98094147a88b\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"CharacterSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1.0\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"58c07200-35c2-4634-bf4f-39146dcc02bf\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"ActiveHat\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 2\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"42f0f0fc-9033-4a15-a568-7233f15888a6\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"Language\",\r\n      \"type\": \"string\",\r\n      \"value\": \"Spanish\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"a7634527-3c54-480b-bd70-ec0688fa7b66\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"CharacterSize\",\r\n      \"type\": \"float\",\r\n     
+    \"value\": 1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"2266b4e3-a714-4c7c-90cb-98094147a88b\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"CharacterSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
+    1.0\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"6425f585-dcf3-48ce-9486-732852d3a59e\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"951304dd-2b96-421c-ace2-a944d56b2948\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2021-08-12T18:16:15Z\",\r\n    \"updatedAt\":
+    \"2021-08-12T18:16:15Z\"\r\n  }\r\n]"
   _rulesList: '[]'
   _lastCachedRulesList: '[]'
