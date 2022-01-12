@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    private ApplyRemoteConfigSettings rcInstance;
+
     [SerializeField]
     private float m_MovementSpeed = 5.0f;
 
@@ -29,7 +31,9 @@ public class PlayerController : MonoBehaviour
     const float k_MinMovementDistance = 1.2f;
 
     void Start()
-    {
+    {   
+        //SetMovementSpeed(rcInstance.characterSpeed);
+
         m_Rigidbody = GetComponent<Rigidbody>();
         m_MainCamera = Camera.main;
     }
@@ -144,5 +148,10 @@ public class PlayerController : MonoBehaviour
 
         // apply calculated velocity
         m_Rigidbody.velocity = movementDirection * m_MovementSpeed;
+    }
+
+    public void SetMovementSpeed(float speed)
+    {
+        m_MovementSpeed = speed;
     }
 }

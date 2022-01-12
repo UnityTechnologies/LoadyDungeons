@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using Unity.RemoteConfig;
+using Unity.Services.Core;
+using Unity.Services.Authentication;
+
+using System.Threading.Tasks;
+
 using UnityEngine.UI;
 
+// This script handles the set-up and fetching of the Remote Configuration settings
 public class ApplyRemoteConfigSettings : MonoBehaviour
 {
+    public static ApplyRemoteConfigSettings Instance {get; private set;}
+  
     public string language = "English";
     public float characterSize = 1.0f;
     public float characterSpeed = 1.0f;
@@ -26,8 +35,34 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
         // public string appVersion;
     }
     
-    void Start()
+    async Task InitializeRemoteConfigAsync()
     {
+        // initialize handlers for unity game services
+        await UnityServices.InitializeAsync();
+
+        // remote config requires authentication for managing environment information
+        if (!AuthenticationService.Instance.IsSignedIn)
+        {
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+    }
+    
+    void Awake()
+    {
+        if (Instance == null) 
+        {
+            Instance = this;
+        }
+        else 
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    async void Start()
+    {
+        await InitializeRemoteConfigAsync();
+
         // Fetch the Dashboard Remote Config from RemoteConfigManager    
         //RemoteConfigManagerScript.FetchConfigs();
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(){}, new appAttributes(){});
@@ -38,7 +73,7 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 
         // Set the environment ID: 
         // Defaults to Production, unless Development Build is Checked
-        //ConfigManager.SetEnvironmentID("951304dd-2b96-421c-ace2-a944d56b2948");
+        ConfigManager.SetEnvironmentID("951304dd-2b96-421c-ace2-a944d56b2948");
 
         ConfigManager.FetchCompleted += RemoteConfigLoaded;
     }
@@ -61,15 +96,48 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
                 language = ConfigManager.appConfig.GetString("Language");
 
                 // Call the SetLocalization Function passing in the language string as a parameter
-                SetLocalization(language);
+                if(StartButtonText != null)
+                {
+                    SetLocalization(language);
+                }
 
-                Debug.Log("Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
-                Debug.Log("Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
+                activeHat = ConfigManager.appConfig.GetInt("ActiveHat");
+
+                //Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
+
+                characterSize = ConfigManager.appConfig.GetFloat("CharacterSize");
+                
+                //Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
+
+                characterSpeed = ConfigManager.appConfig.GetFloat("CharacterSpeed");
+
+                //Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
                 break;
         }
     }
 
-    // Can also use a Switch / Case check
+    // Public function for access outside of the class
+    public void FetchConfigs()
+    {
+        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(){}, new appAttributes(){});
+
+        ConfigManager.FetchCompleted += RemoteConfigLoaded;
+
+        //activeHat = ConfigManager.appConfig.GetInt("ActiveHat");
+
+        Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
+
+        //characterSize = ConfigManager.appConfig.GetFloat("CharacterSize");
+
+        Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
+
+        //characterSpeed = ConfigManager.appConfig.GetFloat("CharacterSpeed");
+
+        Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
+        Debug.Log("Local Active Hat " + activeHat);
+    }
+
+    // Can also use a Switch / Case check, as well as a Scriptable Object to hold the variable for the new language for more areas of the game to 
     public void SetLocalization(string str)
     {
         if (str == "English")
@@ -85,8 +153,20 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
             StoreButtonText.GetComponent<Text>().text = "Tienda";
             Debug.Log("Spanish Localization Set!");
         }
+
+        else if (str == "French")
+        {
+            StartButtonText.GetComponent<Text>().text = "Bienvennue";
+            StoreButtonText.GetComponent<Text>().text = "Depanneur";
+            Debug.Log("French Localization Set!");
+        }
+
+        else if (str == "German")
+        {
+            StartButtonText.GetComponent<Text>().text = "Abspielen";
+            StoreButtonText.GetComponent<Text>().text = "Einkaufen";
+            Debug.Log("German Localization Set!");
+        }
     }
-
-
 }
 

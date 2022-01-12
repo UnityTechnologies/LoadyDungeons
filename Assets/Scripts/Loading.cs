@@ -13,6 +13,8 @@ public class Loading : MonoBehaviour
     [SerializeField]
     private GameObject m_PlayButton;
 
+    private string language;
+
     void OnEnable()
     {
         m_SceneHandle = Addressables.DownloadDependenciesAsync("Level_0" + GameManager.s_CurrentLevel);
@@ -28,7 +30,26 @@ public class Loading : MonoBehaviour
     {
         // We show the UI button once the scene is successfully downloaded      
         if(obj.Status == AsyncOperationStatus.Succeeded)
-        {
+        {  
+            language = ApplyRemoteConfigSettings.Instance.language;
+
+            if (language == "English")
+            {
+                m_PlayButton.GetComponentInChildren<Text>().text = "Play";
+            }
+            else if (language == "Spanish")
+            {
+                m_PlayButton.GetComponentInChildren<Text>().text = "Comienzo";
+            }
+            else if (language == "French")
+            {
+                m_PlayButton.GetComponentInChildren<Text>().text = "Bienvennue";
+            }
+            else if (language == "German")
+            {
+                m_PlayButton.GetComponentInChildren<Text>().text = "Abspielen";
+            }
+            
             m_PlayButton.SetActive(true);
         }
     }

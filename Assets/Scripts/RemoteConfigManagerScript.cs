@@ -35,7 +35,7 @@ public static class RemoteConfigManagerScript
                 Debug.Log("No settings loaded this session; using cached values from a previous session.");
                 break;
             case ConfigOrigin.Remote:
-                Debug.Log("New Settings loaded.");
+                Debug.Log("New Settings loaded!");
                 RefreshSettings.Invoke();
                 break;
         }
