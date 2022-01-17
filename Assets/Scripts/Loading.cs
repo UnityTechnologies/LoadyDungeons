@@ -39,11 +39,11 @@ public class Loading : MonoBehaviour
             }
             else if (language == "Spanish")
             {
-                m_PlayButton.GetComponentInChildren<Text>().text = "Comienzo";
+                m_PlayButton.GetComponentInChildren<Text>().text = "Jugar";
             }
             else if (language == "French")
             {
-                m_PlayButton.GetComponentInChildren<Text>().text = "Bienvennue";
+                m_PlayButton.GetComponentInChildren<Text>().text = "Jouer";
             }
             else if (language == "German")
             {

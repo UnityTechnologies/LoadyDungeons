@@ -103,15 +103,15 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 
                 activeHat = ConfigManager.appConfig.GetInt("ActiveHat");
 
-                //Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
+                Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
 
                 characterSize = ConfigManager.appConfig.GetFloat("CharacterSize");
                 
-                //Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
+                Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
 
                 characterSpeed = ConfigManager.appConfig.GetFloat("CharacterSpeed");
 
-                //Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
+                Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
                 break;
         }
     }

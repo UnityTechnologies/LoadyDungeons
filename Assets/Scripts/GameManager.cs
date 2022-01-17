@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static int s_CurrentLevel = 0;
 
-    public static int s_MaxAvailableLevel = 4;
+    public static int s_MaxAvailableLevel = 5;
 
     // The value of -1 means no hats have been purchased
     public static int s_ActiveHat = 0;

@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    // Reference to Instace of Remote Config
     private ApplyRemoteConfigSettings rcInstance;
 
     [SerializeField]
@@ -30,9 +31,14 @@ public class PlayerController : MonoBehaviour
     
     const float k_MinMovementDistance = 1.2f;
 
+    void Awake()
+    {
+        rcInstance = new ApplyRemoteConfigSettings();
+    }
+
     void Start()
     {   
-        //SetMovementSpeed(rcInstance.characterSpeed);
+        SetMovementSpeed(rcInstance.characterSpeed);
 
         m_Rigidbody = GetComponent<Rigidbody>();
         m_MainCamera = Camera.main;
