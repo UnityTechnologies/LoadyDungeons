@@ -11,7 +11,7 @@ public class Loading : MonoBehaviour
     private Slider m_LoadingSlider;
 
     [SerializeField]
-    private GameObject m_PlayButton;
+    private GameObject m_PlayButton, m_LoadingText;
 
     private string language;
 
@@ -36,18 +36,22 @@ public class Loading : MonoBehaviour
             if (language == "English")
             {
                 m_PlayButton.GetComponentInChildren<Text>().text = "Play";
+                m_LoadingText.GetComponent<Text>().text = "Loading...";
             }
             else if (language == "Spanish")
             {
                 m_PlayButton.GetComponentInChildren<Text>().text = "Jugar";
+                m_LoadingText.GetComponent<Text>().text = "Cargando...";
             }
             else if (language == "French")
             {
                 m_PlayButton.GetComponentInChildren<Text>().text = "Jouer";
+                m_LoadingText.GetComponent<Text>().text = "Chargement...";
             }
             else if (language == "German")
             {
                 m_PlayButton.GetComponentInChildren<Text>().text = "Abspielen";
+                m_LoadingText.GetComponent<Text>().text = "Die Beladung...";
             }
             
             m_PlayButton.SetActive(true);

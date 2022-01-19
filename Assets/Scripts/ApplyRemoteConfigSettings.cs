@@ -15,32 +15,44 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 {
     public static ApplyRemoteConfigSettings Instance {get; private set;}
   
+    // We'll be using these variables throughout the project
     public string language = "English";
     public float characterSize = 1.0f;
     public float characterSpeed = 1.0f;
     public int activeHat = 0;
 
+    // References to Start and Store text components
     public GameObject StartButtonText;
     public GameObject StoreButtonText; 
 
     public struct userAttributes
     {
         // Optionally declare variables for any custom user attributes:
+        // This variable can be updated as the game progresses and then used in Campaign Audience Targeting!
+
+        // user.inventory.item
+        // user.levelsCompleted
     }
 
     public struct appAttributes
     {
-        // // Optionally declare variables for any custom app attributes:
+        // Optionally declare variables for any custom app attributes:
+
+        // i.e
         // public int level;
         // public string appVersion;
     }
     
+    //Much like coroutines and the yield statement, async methods 
+    //and await methods can be paused (waiting for result from an asynchronous call) and then resumed. 
+    //The key difference, however, is async methods can return data.
     async Task InitializeRemoteConfigAsync()
     {
-        // initialize handlers for unity game services
+        // initialize handlers for Unity game services
         await UnityServices.InitializeAsync();
 
-        // remote config requires authentication for managing environment information
+        // As of Remote Config 3.0.0 SDK,
+        // * Remote Config now requires Authentication for managing environment information and retrieving Settings *
         if (!AuthenticationService.Instance.IsSignedIn)
         {
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
@@ -61,10 +73,11 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 
     async void Start()
     {
+        // call with await keyword our async Task function
         await InitializeRemoteConfigAsync();
 
         // Fetch the Dashboard Remote Config from RemoteConfigManager    
-        //RemoteConfigManagerScript.FetchConfigs();
+        // We also append the userAttributes and appAttributes struct in our Fetch request
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(){}, new appAttributes(){});
 
         // Optional Settings

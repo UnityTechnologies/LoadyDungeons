@@ -38,7 +38,10 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {   
-        SetMovementSpeed(rcInstance.characterSpeed);
+        if (rcInstance)
+        {
+            SetMovementSpeed(rcInstance.characterSpeed);
+        }
 
         m_Rigidbody = GetComponent<Rigidbody>();
         m_MainCamera = Camera.main;
