@@ -17,6 +17,7 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
   
     // We'll be using these variables throughout the project
     public string language = "English";
+    public string season = "Default";
     public float characterSize = 1.0f;
     public float characterSpeed = 1.0f;
     public int activeHat = 0;
@@ -28,10 +29,11 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
     public struct userAttributes
     {
         // Optionally declare variables for any custom user attributes:
-        // This variable can be updated as the game progresses and then used in Campaign Audience Targeting!
+        // These variables can be updated as the game progresses and then used in Campaign Audience Targeting!
+        public int score;
 
-        // user.inventory.item
-        // user.levelsCompleted
+        // items inventory[]
+        // levelsCompleted
     }
 
     public struct appAttributes
@@ -59,6 +61,7 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
         }
     }
     
+    // Simple Instance set-up
     void Awake()
     {
         if (Instance == null) 
@@ -71,14 +74,18 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
         }
     }
 
+    // Async start() function
     async void Start()
     {
         // call with await keyword our async Task function
         await InitializeRemoteConfigAsync();
 
+        userAttributes uaStruct = new userAttributes();
+        uaStruct.score = 10;
+
         // Fetch the Dashboard Remote Config from RemoteConfigManager    
         // We also append the userAttributes and appAttributes struct in our Fetch request
-        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(){}, new appAttributes(){});
+        ConfigManager.FetchConfigs<userAttributes, appAttributes>(uaStruct, new appAttributes(){});
 
         // Optional Settings
         // Set the user’s unique ID:
@@ -115,16 +122,18 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
                 }
 
                 activeHat = ConfigManager.appConfig.GetInt("ActiveHat");
+                //Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
 
-                Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
 
                 characterSize = ConfigManager.appConfig.GetFloat("CharacterSize");
+                //Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
                 
-                Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
 
                 characterSpeed = ConfigManager.appConfig.GetFloat("CharacterSpeed");
+                //Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
 
-                Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
+                season = ConfigManager.appConfig.GetString("Season");
+                //Debug.Log("RC Season " + (ConfigManager.appConfig.GetString("Season")));
                 break;
         }
     }

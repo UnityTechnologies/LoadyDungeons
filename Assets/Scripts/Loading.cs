@@ -60,7 +60,17 @@ public class Loading : MonoBehaviour
 
     public void GoToNextLevel()
     {
-        Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+        if(ApplyRemoteConfigSettings.Instance.season != "Winter")
+        {
+            Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+        }
+        
+        // Else If the season is supposed to be Winter
+        else if (ApplyRemoteConfigSettings.Instance.season == "Winter")
+        {
+            Debug.LogError("InsideGoToNextLevel()");
+            Addressables.LoadSceneAsync("Level_0" + "4", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+        }
     }
 
     private void Update()

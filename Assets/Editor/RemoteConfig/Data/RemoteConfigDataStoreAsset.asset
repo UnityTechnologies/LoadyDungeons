@@ -12,28 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"c16e1c18-a2df-42e6-b384-5746527d54ac\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"953b1421-7d82-47c7-a3ad-fa5ed7cf045d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"ActiveHat\",\r\n      \"type\": \"int\",\r\n     
-    \"value\": 5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"20cee204-9d92-48be-a5ee-3d48999d323f\"\r\n    },\r\n    \"rs\": {\r\n     
-    \"key\": \"Language\",\r\n      \"type\": \"string\",\r\n      \"value\": \"French\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"6df60ee2-27ea-4d5c-abae-529caeb2230f\"\r\n   
+    \"value\": 1\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"7e73a560-4c84-4510-8f1a-e65567e324ea\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"Language\",\r\n      \"type\": \"string\",\r\n      \"value\": \"English\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"09781f68-252d-4a41-8263-df85a5e9a3b9\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"CharacterSize\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"ec2ce514-7fff-4871-90d4-8c0825b077c1\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"7e142985-b288-4f5b-8a04-d65f7f331e7d\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"CharacterSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    3.0\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"c16e1c18-a2df-42e6-b384-5746527d54ac\"\r\n   
+    4.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f7fca076-39d4-45c4-b7f7-53b8e869ff94\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"Season\",\r\n      \"type\": \"string\",\r\n     
+    \"value\": \"Winter\"\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"953b1421-7d82-47c7-a3ad-fa5ed7cf045d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"ActiveHat\",\r\n      \"type\": \"int\",\r\n     
-    \"value\": 5\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"20cee204-9d92-48be-a5ee-3d48999d323f\"\r\n    },\r\n    \"rs\": {\r\n     
-    \"key\": \"Language\",\r\n      \"type\": \"string\",\r\n      \"value\": \"French\"\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"6df60ee2-27ea-4d5c-abae-529caeb2230f\"\r\n   
+    \"value\": 1\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"7e73a560-4c84-4510-8f1a-e65567e324ea\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"Language\",\r\n      \"type\": \"string\",\r\n      \"value\": \"English\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"09781f68-252d-4a41-8263-df85a5e9a3b9\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"CharacterSize\",\r\n      \"type\": \"float\",\r\n     
     \"value\": 1.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"ec2ce514-7fff-4871-90d4-8c0825b077c1\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"7e142985-b288-4f5b-8a04-d65f7f331e7d\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"CharacterSpeed\",\r\n      \"type\": \"float\",\r\n      \"value\":
-    3.0\r\n    }\r\n  }\r\n]"
+    4.0\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"f7fca076-39d4-45c4-b7f7-53b8e869ff94\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"Season\",\r\n      \"type\": \"string\",\r\n     
+    \"value\": \"Winter\"\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"6425f585-dcf3-48ce-9486-732852d3a59e\",\r\n   
     \"name\": \"production\",\r\n    \"id\": \"951304dd-2b96-421c-ace2-a944d56b2948\",\r\n   
     \"isDefault\": true,\r\n    \"createdAt\": \"2021-08-12T18:16:15Z\",\r\n    \"updatedAt\":
