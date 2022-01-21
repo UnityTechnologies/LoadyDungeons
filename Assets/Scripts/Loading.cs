@@ -58,9 +58,10 @@ public class Loading : MonoBehaviour
         }
     }
 
+    // Function to handle which level is loaded next
     public void GoToNextLevel()
     {
-        if(ApplyRemoteConfigSettings.Instance.season != "Winter")
+        if(ApplyRemoteConfigSettings.Instance.season == "Default")
         {
             Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
         }
@@ -70,6 +71,13 @@ public class Loading : MonoBehaviour
         {
             Debug.LogError("InsideGoToNextLevel()");
             Addressables.LoadSceneAsync("Level_0" + "4", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+        }
+
+        // Else If the season is supposed to be Halloween
+        else if (ApplyRemoteConfigSettings.Instance.season == "Halloween")
+        {
+            Debug.LogError("InsideGoToNextLevel()");
+            Addressables.LoadSceneAsync("Level_0" + "2", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
         }
     }
 

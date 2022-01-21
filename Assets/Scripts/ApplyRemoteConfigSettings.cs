@@ -80,6 +80,7 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
         // call with await keyword our async Task function
         await InitializeRemoteConfigAsync();
 
+        // Set-up for how to send a custom Struct value
         userAttributes uaStruct = new userAttributes();
         uaStruct.score = 10;
 
@@ -120,20 +121,20 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
                 {
                     SetLocalization(language);
                 }
+                
+                season = ConfigManager.appConfig.GetString("Season");
+                Debug.Log("RC Season " + (ConfigManager.appConfig.GetString("Season")));
 
                 activeHat = ConfigManager.appConfig.GetInt("ActiveHat");
-                //Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
+                Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
 
 
                 characterSize = ConfigManager.appConfig.GetFloat("CharacterSize");
-                //Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
+                Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
                 
 
                 characterSpeed = ConfigManager.appConfig.GetFloat("CharacterSpeed");
-                //Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
-
-                season = ConfigManager.appConfig.GetString("Season");
-                //Debug.Log("RC Season " + (ConfigManager.appConfig.GetString("Season")));
+                Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
                 break;
         }
     }
@@ -144,22 +145,10 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(){}, new appAttributes(){});
 
         ConfigManager.FetchCompleted += RemoteConfigLoaded;
-
-        //activeHat = ConfigManager.appConfig.GetInt("ActiveHat");
-
-        Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
-
-        //characterSize = ConfigManager.appConfig.GetFloat("CharacterSize");
-
-        Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
-
-        //characterSpeed = ConfigManager.appConfig.GetFloat("CharacterSpeed");
-
-        Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
-        Debug.Log("Local Active Hat " + activeHat);
     }
 
-    // Can also use a Switch / Case check, as well as a Scriptable Object to hold the variable for the new language for more areas of the game to 
+    // Can also use a Switch / Case check, or store the localization variable in a Scriptable Object to hold the 
+    //variable for the new language for more areas of the game to reference
     public void SetLocalization(string str)
     {
         if (str == "English")
