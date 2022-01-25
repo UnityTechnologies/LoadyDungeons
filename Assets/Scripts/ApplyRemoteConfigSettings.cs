@@ -82,6 +82,8 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 
         // Set-up for how to send a custom Struct value
         userAttributes uaStruct = new userAttributes();
+
+        // Can also be saved via Cloud Save or a Server 
         uaStruct.score = 10;
 
         // Fetch the Dashboard Remote Config from RemoteConfigManager    
@@ -121,20 +123,18 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
                 {
                     SetLocalization(language);
                 }
-                
+
+                // Assign the rest of the local variables to the Remote Config Setting equivalents
+
                 season = ConfigManager.appConfig.GetString("Season");
-                Debug.Log("RC Season " + (ConfigManager.appConfig.GetString("Season")));
 
                 activeHat = ConfigManager.appConfig.GetInt("ActiveHat");
-                Debug.Log("RC Active Hat " + (ConfigManager.appConfig.GetInt("ActiveHat")));
-
 
                 characterSize = ConfigManager.appConfig.GetFloat("CharacterSize");
-                Debug.Log("RC Size " + (ConfigManager.appConfig.GetFloat("CharacterSize")));
                 
-
                 characterSpeed = ConfigManager.appConfig.GetFloat("CharacterSpeed");
-                Debug.Log("RC Speed " + (ConfigManager.appConfig.GetFloat("CharacterSpeed")));
+
+                // End Case
                 break;
         }
     }
