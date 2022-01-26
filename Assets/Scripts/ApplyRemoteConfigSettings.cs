@@ -96,7 +96,7 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 
         // Set the environment ID: 
         // Defaults to Production, unless Development Build is Checked
-        ConfigManager.SetEnvironmentID("951304dd-2b96-421c-ace2-a944d56b2948");
+        //ConfigManager.SetEnvironmentID("951304dd-2b96-421c-ace2-a944d56b2948");
 
         ConfigManager.FetchCompleted += RemoteConfigLoaded;
     }
