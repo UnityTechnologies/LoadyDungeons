@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-using Unity.RemoteConfig;
+using Unity.Services.RemoteConfig;
 
 public static class RemoteConfigManagerScript
 {

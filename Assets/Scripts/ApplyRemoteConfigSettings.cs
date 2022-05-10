@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using Unity.RemoteConfig;
+using Unity.Services.RemoteConfig;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
 
