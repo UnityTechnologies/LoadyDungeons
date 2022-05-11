@@ -88,17 +88,17 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 
         // Fetch the Dashboard Remote Config from RemoteConfigManager    
         // We also append the userAttributes and appAttributes struct in our Fetch request
-        ConfigManager.FetchConfigs<userAttributes, appAttributes>(uaStruct, new appAttributes(){});
+        RemoteConfigService.Instance.FetchConfigs<userAttributes, appAttributes>(uaStruct, new appAttributes(){});
 
         // Optional Settings
         // Set the user’s unique ID:
-        // ConfigManager.SetCustomUserID("some-user-id");
+        // RemoteConfigService.Instance.SetCustomUserID("some-user-id");
 
         // Set the environment ID: 
         // Defaults to Production, unless Development Build is Checked
-        //ConfigManager.SetEnvironmentID("951304dd-2b96-421c-ace2-a944d56b2948");
+        // RemoteConfigService.Instance.SetEnvironmentID("951304dd-2b96-421c-ace2-a944d56b2948");
 
-        ConfigManager.FetchCompleted += RemoteConfigLoaded;
+        RemoteConfigService.Instance.FetchCompleted += RemoteConfigLoaded;
     }
 
     // Subscribed event function that provides information on what the ConfigResponse was
@@ -116,7 +116,7 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
                 Debug.Log("New settings loaded this session; update values accordingly.");
 
                 // Fetch and set Remote Config value for Language
-                language = ConfigManager.appConfig.GetString("Language");
+                language = RemoteConfigService.Instance.appConfig.GetString("Language");
 
                 // Call the SetLocalization Function passing in the language string as a parameter
                 if(StartButtonText != null)
@@ -126,13 +126,13 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 
                 // Assign the rest of the local variables to the Remote Config Setting equivalents
 
-                season = ConfigManager.appConfig.GetString("Season");
+                season = RemoteConfigService.Instance.appConfig.GetString("Season");
 
-                activeHat = ConfigManager.appConfig.GetInt("ActiveHat");
+                activeHat = RemoteConfigService.Instance.appConfig.GetInt("ActiveHat");
 
-                characterSize = ConfigManager.appConfig.GetFloat("CharacterSize");
-                
-                characterSpeed = ConfigManager.appConfig.GetFloat("CharacterSpeed");
+                characterSize = RemoteConfigService.Instance.appConfig.GetFloat("CharacterSize");
+ 
+                characterSpeed = RemoteConfigService.Instance.appConfig.GetFloat("CharacterSpeed");
 
                 // End Case
                 break;
@@ -142,9 +142,9 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
     // Public function for access outside of the class
     public void FetchConfigs()
     {
-        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(){}, new appAttributes(){});
+        RemoteConfigService.Instance.FetchConfigs<userAttributes, appAttributes>(new userAttributes(){}, new appAttributes(){});
 
-        ConfigManager.FetchCompleted += RemoteConfigLoaded;
+        RemoteConfigService.Instance.FetchCompleted += RemoteConfigLoaded;
     }
 
     // Can also use a Switch / Case check, or store the localization variable in a Scriptable Object to hold the 
