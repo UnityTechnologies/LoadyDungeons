@@ -21,28 +21,26 @@ MonoBehaviour:
     m_Address: Hat00
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   - m_GUID: 6e65281e8a345ff4ea1b73f2a1578a6d
     m_Address: Hat01
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   - m_GUID: 6c93cb6413eaf5f46bbe190dbbad2651
     m_Address: Hat02
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   - m_GUID: 434c1413ad6a76842a3a98e6a21aefa5
     m_Address: Hat03
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 6774698051306351897, guid: 434c1413ad6a76842a3a98e6a21aefa5,
-      type: 3}
-    m_TargetAsset: {fileID: 6774698051306351897, guid: 434c1413ad6a76842a3a98e6a21aefa5,
-      type: 3}
+  - m_GUID: 173ee4c7d80755d47aa3339f970e8ade
+    m_Address: Hat05
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dc8eb9039a6936749b8aad319953ab89
+    m_Address: Hat04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 661d48ea9271a404cae43a9e2517e23a, type: 2}
   m_SchemaSet:

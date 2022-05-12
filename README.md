@@ -3,7 +3,7 @@
 # Loady Dungeons
 Loady Dungeons is a **demo game** intended to onboard users into using the [Addressable Assets](https://docs.unity3d.com/Packages/com.unity.addressables@0.3/manual/index.html) package and the Unity [Cloud Content Delivery](https://unity.com/products/cloud-content-delivery) service. Although there is a lot of room for code and asset optimizations, the demo is designed to demonstrate the uses of the Addressables and CCD tools. 
 
-In addition, there is also a Remote Config branch for users to understand how to implement Remote Config and how to integrate it with an existing CCD and Addressables project.
+In addition, there is also a Remote Config integration for users to understand how to implement Remote Config and how to integrate it with an existing CCD and Addressables project.
 
 :computer: If you are following the video tutorial, you can download the starting project [here](https://github.com/UnityTechnologies/LoadyDungeons/releases/tag/ws0.4.0).
 
@@ -11,13 +11,11 @@ In addition, there is also a Remote Config branch for users to understand how to
 The gameplay is simple: you control _Dino_ on her quest to discover all the dungeons in the world. Touch anywhere on the floor of the map, and she will move to that spot. Find the chest, get the key and open the door to go to the next level.
 
 ### Prerequisites
-* Unity Version: 2021.1 
-* Authentication: 1.0.0-pre.6
-* Addressables Package: 1.18.9
+* Unity Version: 2021.3.2f1 (LTS) 
+* Authentication: 2.0.0
+* Addressables Package: 1.19.19
 * Cloud Content Delivery Management: 2.0.4
-
-For Remote Config Branch
-* Version 3.0.0-pre.8
+* Remote Config Version: 3.0.0-pre.29
 
 # Services Overview
 **Authentication** :

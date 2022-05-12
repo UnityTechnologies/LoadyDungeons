@@ -4,12 +4,26 @@ using UnityEngine.AddressableAssets;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance {get; private set;}
+    
     public static int s_CurrentLevel = 0;
 
-    public static int s_MaxAvailableLevel = 4;
+    public static int s_MaxAvailableLevel = 5;
 
     // The value of -1 means no hats have been purchased
-    public static int s_ActiveHat = -1;
+    public static int s_ActiveHat = 0;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void OnEnable()
     {
@@ -20,6 +34,11 @@ public class GameManager : MonoBehaviour
     public void ExitGame()
     {
         s_CurrentLevel = 0;
+    }
+
+    public void SetCurrentLevel(int level)
+    {
+        s_CurrentLevel = level;
     }
 
     public static void LoadNextLevel()

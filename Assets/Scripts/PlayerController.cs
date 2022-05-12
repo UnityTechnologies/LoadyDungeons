@@ -4,8 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    // Reference to Instace of Remote Config
+    private ApplyRemoteConfigSettings rcInstance;
+
     [SerializeField]
-    private float m_MovementSpeed = 5.0f;
+    private float m_MovementSpeed = 5.0f, m_CharacterSize = 1.0f;
 
     [SerializeField]
     private Animator m_AnimatorController;
@@ -13,8 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask m_InputCollisionLayer;
 
-    [SerializeField]
-    private GameManager m_GameManager;
+    // [SerializeField]
+    // private GameManager m_GameManager;
 
     private bool m_HasKey = false;
 
@@ -28,8 +31,16 @@ public class PlayerController : MonoBehaviour
     
     const float k_MinMovementDistance = 1.2f;
 
-    void Start()
+    void Awake()
     {
+        rcInstance = ApplyRemoteConfigSettings.Instance;
+        
+        SetMovementSpeed(rcInstance.characterSpeed);
+        SetCharacterSize(rcInstance.characterSize);
+    }
+
+    void Start()
+    {   
         m_Rigidbody = GetComponent<Rigidbody>();
         m_MainCamera = Camera.main;
     }
@@ -144,5 +155,18 @@ public class PlayerController : MonoBehaviour
 
         // apply calculated velocity
         m_Rigidbody.velocity = movementDirection * m_MovementSpeed;
+    }
+
+    public void SetMovementSpeed(float speed)
+    {
+        m_MovementSpeed = speed;
+        Debug.Log("Movement Speed Set! " + m_MovementSpeed);
+    }
+
+    public void SetCharacterSize(float size)
+    {
+        m_CharacterSize = size;
+        gameObject.transform.localScale = new Vector3(m_CharacterSize,m_CharacterSize,m_CharacterSize);
+        Debug.Log("Local Scale Set! " + gameObject.transform.localScale);
     }
 }
