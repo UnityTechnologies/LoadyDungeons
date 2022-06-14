@@ -37,7 +37,7 @@ The project uses a simple approach for managing the bundles with the assets. Eac
 ![Asset Architecture](https://user-images.githubusercontent.com/263776/110168293-9611ba80-7dbc-11eb-9945-417a16c3386d.jpg)
 
 ### Additional Resources
-* If you’d like to learn more about this demo, and how to use Cloud Content Delivery, [click here](https://www.youtube.com/watch?v=zadjp30LTMs). 
+* If you’d like to learn more about this demo, and how to use Cloud Content Delivery, [click here](https://www.youtube.com/watch?v=J9XbISBpfp0). 
 * If you’d like to watch the full Technical Workshop for Cloud Content Delivery, [click here](https://www.youtube.com/watch?v=5IvPPI7YnwU). 
 * To learn more about the Remote Config branch, [click here](https://www.youtube.com/watch?v=RL3-VY8runI). 
 * If you want to learn more about how to optimize the usage of Addressables, read [this post](https://blog.unity.com/technology/tales-from-the-optimization-trenches-saving-memory-with-addressables) by Patrick DeVarney. 
