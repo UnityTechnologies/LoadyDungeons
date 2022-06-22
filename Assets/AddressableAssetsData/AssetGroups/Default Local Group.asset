@@ -21,14 +21,42 @@ MonoBehaviour:
     m_Address: MainMenu
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   - m_GUID: a1e01d398699cc940a960600837600bd
     m_Address: LoadingScene
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+  - m_GUID: 7554b18db3b335b4da1ca6ff65374ac9
+    m_Address: Level_00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 952b5b04d0205ba4084c9256369178ae
+    m_Address: Level_01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e40f8e5164d7a3b49a53720406e42408
+    m_Address: Level_02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 29c1d8c3070b4e441ab2c21e14128a7b
+    m_Address: Level_03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b53baa10142cbb346a47ab071d32889a
+    m_Address: Hat00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6e65281e8a345ff4ea1b73f2a1578a6d
+    m_Address: Hat01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6c93cb6413eaf5f46bbe190dbbad2651
+    m_Address: Hat02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 434c1413ad6a76842a3a98e6a21aefa5
+    m_Address: Hat03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 661d48ea9271a404cae43a9e2517e23a, type: 2}
   m_SchemaSet:
