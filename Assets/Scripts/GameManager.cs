@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     // The value of -1 means no hats have been purchased
     public static int s_ActiveHat = 0;
-    //Test Comment
+    //Test Comment 2
     public void Awake()
     {
         if (Instance == null)
