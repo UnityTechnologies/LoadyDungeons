@@ -36,7 +36,7 @@ public class Loading : MonoBehaviour
             if (language == "English")
             {
                 m_PlayButton.GetComponentInChildren<Text>().text = "Play";
-                m_LoadingText.GetComponent<Text>().text = "Loading...";
+                m_LoadingText.GetComponent<Text>().text = $"Loading level {GameManager.s_CurrentLevel}...";
             }
             else if (language == "Spanish")
             {
