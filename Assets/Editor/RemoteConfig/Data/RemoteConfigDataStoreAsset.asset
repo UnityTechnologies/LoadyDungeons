@@ -12,8 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: '[]'
-  _rsLastCachedKeyList: '[]'
+  _rsKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"93d48a20-e415-4187-b33a-119117eec7c0\"\n   
+    },\n    \"rs\": {\n      \"key\": \"ActiveHat\",\n      \"type\": \"int\",\n     
+    \"value\": 0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"f0ff1192-56a3-414a-b926-08416fc17472\"\n   
+    },\n    \"rs\": {\n      \"key\": \"Language\",\n      \"type\": \"string\",\n     
+    \"value\": \"English\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
+    \"236bf5db-848b-49be-8298-926b0d60919f\"\n    },\n    \"rs\": {\n      \"key\":
+    \"CharacterSize\",\n      \"type\": \"float\",\n      \"value\": 1.0\n    }\n 
+    },\n  {\n    \"metadata\": {\n      \"entityId\": \"8e0cfd1c-0915-4d44-baf6-ee9ffbc47e9c\"\n   
+    },\n    \"rs\": {\n      \"key\": \"CharacterSpeed\",\n      \"type\": \"float\",\n     
+    \"value\": 20.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"b5e01a25-22f5-4c80-b8d6-445db35e23d9\"\n   
+    },\n    \"rs\": {\n      \"key\": \"Season\",\n      \"type\": \"string\",\n     
+    \"value\": \"Default\"\n    }\n  }\n]"
+  _rsLastCachedKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"93d48a20-e415-4187-b33a-119117eec7c0\"\n   
+    },\n    \"rs\": {\n      \"key\": \"ActiveHat\",\n      \"type\": \"int\",\n     
+    \"value\": 0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"f0ff1192-56a3-414a-b926-08416fc17472\"\n   
+    },\n    \"rs\": {\n      \"key\": \"Language\",\n      \"type\": \"string\",\n     
+    \"value\": \"English\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
+    \"236bf5db-848b-49be-8298-926b0d60919f\"\n    },\n    \"rs\": {\n      \"key\":
+    \"CharacterSize\",\n      \"type\": \"float\",\n      \"value\": 1.0\n    }\n 
+    },\n  {\n    \"metadata\": {\n      \"entityId\": \"8e0cfd1c-0915-4d44-baf6-ee9ffbc47e9c\"\n   
+    },\n    \"rs\": {\n      \"key\": \"CharacterSpeed\",\n      \"type\": \"float\",\n     
+    \"value\": 20.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"b5e01a25-22f5-4c80-b8d6-445db35e23d9\"\n   
+    },\n    \"rs\": {\n      \"key\": \"Season\",\n      \"type\": \"string\",\n     
+    \"value\": \"Default\"\n    }\n  }\n]"
   _environments: "[\n  {\n    \"projectId\": \"ac9fa272-0c81-486f-9fbe-90f7a0611922\",\n   
     \"name\": \"development\",\n    \"id\": \"7747406b-1254-49e0-a035-3a508201a8dd\",\n   
     \"isDefault\": false,\n    \"createdAt\": \"2022-06-27T18:33:32Z\",\n    \"updatedAt\":
