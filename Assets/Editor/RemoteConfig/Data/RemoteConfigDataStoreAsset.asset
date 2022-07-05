@@ -12,31 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"84412b47-e5f6-4142-a73c-a9c612ecdcad\"\n   
-    },\n    \"rs\": {\n      \"key\": \"ActiveHat\",\n      \"type\": \"int\",\n     
-    \"value\": 2\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"97918824-61e4-408b-b159-a1161cfc41ee\"\n   
-    },\n    \"rs\": {\n      \"key\": \"Language\",\n      \"type\": \"string\",\n     
-    \"value\": \"English\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
-    \"b0fbc64c-2660-4886-b908-797c3a63b9db\"\n    },\n    \"rs\": {\n      \"key\":
-    \"CharacterSize\",\n      \"type\": \"float\",\n      \"value\": 1.0\n    }\n 
-    },\n  {\n    \"metadata\": {\n      \"entityId\": \"632800af-f23f-498f-a338-a887fdeba2dd\"\n   
-    },\n    \"rs\": {\n      \"key\": \"CharacterSpeed\",\n      \"type\": \"float\",\n     
-    \"value\": 7.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"9fe8cb2d-7490-4003-ad98-4d5397bdc92a\"\n   
-    },\n    \"rs\": {\n      \"key\": \"Season\",\n      \"type\": \"string\",\n     
-    \"value\": \"Default\"\n    }\n  }\n]"
-  _rsLastCachedKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"84412b47-e5f6-4142-a73c-a9c612ecdcad\"\n   
-    },\n    \"rs\": {\n      \"key\": \"ActiveHat\",\n      \"type\": \"int\",\n     
-    \"value\": 2\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"97918824-61e4-408b-b159-a1161cfc41ee\"\n   
-    },\n    \"rs\": {\n      \"key\": \"Language\",\n      \"type\": \"string\",\n     
-    \"value\": \"English\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
-    \"b0fbc64c-2660-4886-b908-797c3a63b9db\"\n    },\n    \"rs\": {\n      \"key\":
-    \"CharacterSize\",\n      \"type\": \"float\",\n      \"value\": 1.0\n    }\n 
-    },\n  {\n    \"metadata\": {\n      \"entityId\": \"632800af-f23f-498f-a338-a887fdeba2dd\"\n   
-    },\n    \"rs\": {\n      \"key\": \"CharacterSpeed\",\n      \"type\": \"float\",\n     
-    \"value\": 7.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"9fe8cb2d-7490-4003-ad98-4d5397bdc92a\"\n   
-    },\n    \"rs\": {\n      \"key\": \"Season\",\n      \"type\": \"string\",\n     
-    \"value\": \"Default\"\n    }\n  }\n]"
-  _environments: "[\n  {\n    \"projectId\": \"6425f585-dcf3-48ce-9486-732852d3a59e\",\n   
-    \"name\": \"production\",\n    \"id\": \"951304dd-2b96-421c-ace2-a944d56b2948\",\n   
-    \"isDefault\": true,\n    \"createdAt\": \"2021-08-12T18:16:15Z\",\n    \"updatedAt\":
-    \"2021-08-12T18:16:15Z\"\n  }\n]"
+  _rsKeyList: '[]'
+  _rsLastCachedKeyList: '[]'
+  _environments: "[\n  {\n    \"projectId\": \"ac9fa272-0c81-486f-9fbe-90f7a0611922\",\n   
+    \"name\": \"development\",\n    \"id\": \"7747406b-1254-49e0-a035-3a508201a8dd\",\n   
+    \"isDefault\": false,\n    \"createdAt\": \"2022-06-27T18:33:32Z\",\n    \"updatedAt\":
+    \"2022-06-27T18:33:32Z\"\n  },\n  {\n    \"projectId\": \"ac9fa272-0c81-486f-9fbe-90f7a0611922\",\n   
+    \"name\": \"test\",\n    \"id\": \"e1ae0f2f-9a93-4c63-b9d0-72a76267fff6\",\n   
+    \"isDefault\": false,\n    \"createdAt\": \"2022-06-22T20:47:35Z\",\n    \"updatedAt\":
+    \"2022-06-22T20:47:35Z\"\n  },\n  {\n    \"projectId\": \"ac9fa272-0c81-486f-9fbe-90f7a0611922\",\n   
+    \"name\": \"production\",\n    \"id\": \"e4bdc195-c39f-4c1a-8019-e957d92ce81b\",\n   
+    \"isDefault\": true,\n    \"createdAt\": \"2022-06-22T20:41:38Z\",\n    \"updatedAt\":
+    \"2022-06-22T20:41:38Z\"\n  }\n]"
