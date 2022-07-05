@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 908b434eb41181040a446a89e71b95e0
   m_CachedHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 9b6cd942c5131d315bde3d1653ae41c3
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -32,11 +32,15 @@ MonoBehaviour:
   m_ShaderBundleNaming: 0
   m_ShaderBundleCustomNaming: 
   m_MonoScriptBundleNaming: 0
+  m_CheckForContentUpdateRestrictionsOption: 0
+  m_BuildAndReleaseBinFileOption: 0
   m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
     m_Id: 
   m_RemoteCatalogLoadPath:
     m_Id: 
+  m_ContentStateBuildPathProfileVariableName: 
+  m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 2
   m_overridePlayerVersion: 
@@ -49,6 +53,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c786bd9d6355bfe428406afe3af5aa7a, type: 2}
   - {fileID: 11400000, guid: 1df0e3d8f53088f48b7375ffaa8ae6c2, type: 2}
   - {fileID: 11400000, guid: 476d29fefb897be489ddf27c20cf9f13, type: 2}
+  - {fileID: 11400000, guid: 3f44f188aea834cc396abb848335882a, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -67,9 +72,9 @@ MonoBehaviour:
       - m_Id: cbf5669a55f1c3a4da2e6b95df63fce9
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
-        m_Value: ServerData/[BuildTarget]
+        m_Value: CCDBuildData/e1ae0f2f-9a93-4c63-b9d0-72a76267fff6/800dbe21-2555-4245-a2ba-19111b8e8106/latest
       - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: http://localhost/[BuildTarget]
+        m_Value: https://ac9fa272-0c81-486f-9fbe-90f7a0611922.client-api.unity3dusercontent.com/client_api/v1/environments/test/buckets/800dbe21-2555-4245-a2ba-19111b8e8106/release_by_badge/latest/entry_by_path/content/?path=
     - m_InheritedParent: 
       m_Id: 70a5a665e703a974cb424df99c72f798
       m_ProfileName: Desktop Development
@@ -81,9 +86,9 @@ MonoBehaviour:
       - m_Id: cbf5669a55f1c3a4da2e6b95df63fce9
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
-        m_Value: AssetBundles/[BuildTarget]
+        m_Value: CCDBuildData/e1ae0f2f-9a93-4c63-b9d0-72a76267fff6/800dbe21-2555-4245-a2ba-19111b8e8106/latest
       - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: https://6425f585-dcf3-48ce-9486-732852d3a59e.client-api.unity3dusercontent.com/client_api/v1/buckets/5f809432-faf8-4691-a1f7-8923c0c83ee7/release_by_badge/latest/entry_by_path/content/?path=
+        m_Value: https://ac9fa272-0c81-486f-9fbe-90f7a0611922.client-api.unity3dusercontent.com/client_api/v1/environments/test/buckets/800dbe21-2555-4245-a2ba-19111b8e8106/release_by_badge/latest/entry_by_path/content/?path=
     - m_InheritedParent: 
       m_Id: 402745a40a208a14c950786bb9ef578f
       m_ProfileName: Android Development
@@ -103,16 +108,16 @@ MonoBehaviour:
       m_Name: BuildTarget
       m_InlineUsage: 0
     - m_Id: c152bb92211f3854baed928e47c45883
-      m_Name: LocalBuildPath
+      m_Name: Local.BuildPath
       m_InlineUsage: 0
     - m_Id: cbf5669a55f1c3a4da2e6b95df63fce9
-      m_Name: LocalLoadPath
+      m_Name: Local.LoadPath
       m_InlineUsage: 0
     - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
-      m_Name: RemoteBuildPath
+      m_Name: Remote.BuildPath
       m_InlineUsage: 0
     - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-      m_Name: RemoteLoadPath
+      m_Name: Remote.LoadPath
       m_InlineUsage: 0
     m_ProfileVersion: 1
   m_LabelTable:
@@ -136,4 +141,11 @@ MonoBehaviour:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}
     m_NextInstanceId: 0
-    m_RegisteredServiceTypeRefs: []
+    m_RegisteredServiceTypeRefs:
+    - UnityEditor.AddressableAssets.HostingServices.HttpHostingService, Unity.Addressables.Editor
+  m_CcdManagedData:
+    EnvironmentId: e1ae0f2f-9a93-4c63-b9d0-72a76267fff6
+    EnvironmentName: test
+    BucketId: c43a5b71-18f8-42af-b70d-4fae9a03bd2f
+    Badge: latest
+    State: 1
