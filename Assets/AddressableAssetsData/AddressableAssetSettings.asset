@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 908b434eb41181040a446a89e71b95e0
   m_CachedHash:
     serializedVersion: 2
-    Hash: fdf4a958cf1fe44d2c112e42ab467a73
+    Hash: f1f169f6b014c1cb394bd2cadfc2c395
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -86,9 +86,9 @@ MonoBehaviour:
       - m_Id: cbf5669a55f1c3a4da2e6b95df63fce9
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 8c5d51c05ad6e4a48b7bdb8fdafd9aa3
-        m_Value: CCDBuildData/e1ae0f2f-9a93-4c63-b9d0-72a76267fff6/800dbe21-2555-4245-a2ba-19111b8e8106/latest
+        m_Value: /CCDBuildData/test/MacOS/latest/
       - m_Id: 2dd1ea5524cce474aa387f47e81b7dfe
-        m_Value: https://ac9fa272-0c81-486f-9fbe-90f7a0611922.client-api.unity3dusercontent.com/client_api/v1/environments/test/buckets/800dbe21-2555-4245-a2ba-19111b8e8106/release_by_badge/latest/entry_by_path/content/?path=
+        m_Value: https://ac9fa272-0c81-486f-9fbe-90f7a0611922.client-api.unity3dusercontent.com/client_api/v1/environments/test/buckets/800dbe21-2555-4245-a2ba-19111b8e8106/release_by_badge/latest/entry_by_path/content/?path=/CCDBuildData/test/MacOS/latest/
     - m_InheritedParent: 
       m_Id: 402745a40a208a14c950786bb9ef578f
       m_ProfileName: Android Development
