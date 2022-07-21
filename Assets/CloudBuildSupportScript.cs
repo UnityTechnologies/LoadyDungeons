@@ -10,7 +10,7 @@ public class CloudBuildSupportScript : MonoBehaviour
         var cli = Environment.GetEnvironmentVariable("CCD_BINARY_PATH");
         System.Diagnostics.ProcessStartInfo procStartInfo =
             new System.Diagnostics.ProcessStartInfo(cli,
-                "--apikey " + "859c3f086ff8a56ad1238a66b81547a1" + "set environment e1ae0f2f-9a93-4c63-b9d0-72a76267fff6 --project=ac9fa272-0c81-486f-9fbe-90f7a0611922");
+                "--apikey " + "859c3f086ff8a56ad1238a66b81547a1" + "ucd config set environment e1ae0f2f-9a93-4c63-b9d0-72a76267fff6" + "--project=ac9fa272-0c81-486f-9fbe-90f7a0611922");
 
         // The following commands are needed to redirect the standard output.
         // This means that it will be redirected to the Process.StandardOutput StreamReader.
