@@ -33,10 +33,12 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        /*
         rcInstance = ApplyRemoteConfigSettings.Instance;
         
         SetMovementSpeed(rcInstance.characterSpeed);
-        SetCharacterSize(rcInstance.characterSize);
+        */
+        //SetCharacterSize(rcInstance.characterSize);
     }
 
     void Start()

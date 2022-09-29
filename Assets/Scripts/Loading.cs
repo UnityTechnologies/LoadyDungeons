@@ -19,6 +19,8 @@ public class Loading : MonoBehaviour
     {
         m_SceneHandle = Addressables.DownloadDependenciesAsync("Level_0" + GameManager.s_CurrentLevel);
         m_SceneHandle.Completed += OnSceneLoaded;
+        
+        Debug.Log("Loading dependencies for level: " + GameManager.s_CurrentLevel);
     }
 
     private void OnDisable()
@@ -31,7 +33,7 @@ public class Loading : MonoBehaviour
         // We show the UI button once the scene is successfully downloaded      
         if(obj.Status == AsyncOperationStatus.Succeeded)
         {  
-            language = ApplyRemoteConfigSettings.Instance.language;
+            /*language = ApplyRemoteConfigSettings.Instance.language;
 
             if (language == "English")
             {
@@ -52,7 +54,7 @@ public class Loading : MonoBehaviour
             {
                 m_PlayButton.GetComponentInChildren<Text>().text = "Abspielen";
                 m_LoadingText.GetComponent<Text>().text = "Die Beladung...";
-            }
+            }*/
             
             m_PlayButton.SetActive(true);
         }
@@ -61,6 +63,13 @@ public class Loading : MonoBehaviour
     // Function to handle which level is loaded next
     public void GoToNextLevel()
     {
+       // Debug.Log("Loading next scene" + ApplyRemoteConfigSettings.Instance.season);
+        
+        Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+
+        
+        /*Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
+        
         if(ApplyRemoteConfigSettings.Instance.season == "Default")
         {
             Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
@@ -78,7 +87,7 @@ public class Loading : MonoBehaviour
         {
             Debug.LogError("InsideGoToNextLevel()");
             Addressables.LoadSceneAsync("Level_0" + "2", UnityEngine.SceneManagement.LoadSceneMode.Single, true);
-        }
+        }*/
     }
 
     private void Update()
