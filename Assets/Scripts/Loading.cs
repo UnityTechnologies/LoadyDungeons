@@ -63,8 +63,6 @@ public class Loading : MonoBehaviour
     // Function to handle which level is loaded next
     public void GoToNextLevel()
     {
-       // Debug.Log("Loading next scene" + ApplyRemoteConfigSettings.Instance.season);
-        
         Addressables.LoadSceneAsync("Level_0" + GameManager.s_CurrentLevel, UnityEngine.SceneManagement.LoadSceneMode.Single, true);
 
         
