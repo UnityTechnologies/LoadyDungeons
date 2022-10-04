@@ -12,30 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"bbc3165b-dbe5-4645-932e-cce483199f48\"\n   
+  _rsKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"ff6dde7a-d7f0-4980-8975-4a6ecc10189e\"\n   
     },\n    \"rs\": {\n      \"key\": \"ActiveHat\",\n      \"type\": \"int\",\n     
-    \"value\": 2\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"28b9117d-bc9b-4192-9814-88e99708cd01\"\n   
+    \"value\": 1\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"df494bfb-df75-45df-a061-aace94824d46\"\n   
     },\n    \"rs\": {\n      \"key\": \"Language\",\n      \"type\": \"string\",\n     
-    \"value\": \"English\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
-    \"0625c602-f446-4125-ad90-1bbcf47e3cfc\"\n    },\n    \"rs\": {\n      \"key\":
+    \"value\": \"Spanish\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
+    \"9a545089-7e54-4b4f-84ea-a2e00599866a\"\n    },\n    \"rs\": {\n      \"key\":
     \"CharacterSize\",\n      \"type\": \"float\",\n      \"value\": 1.0\n    }\n 
-    },\n  {\n    \"metadata\": {\n      \"entityId\": \"151147a9-1734-4115-861d-5ba12e963284\"\n   
+    },\n  {\n    \"metadata\": {\n      \"entityId\": \"f0605c8c-e8d8-4517-a9c2-b19bfaf3e137\"\n   
     },\n    \"rs\": {\n      \"key\": \"CharacterSpeed\",\n      \"type\": \"float\",\n     
-    \"value\": 5.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"1b249325-1785-4612-9b36-66742c9c1894\"\n   
+    \"value\": 5.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"6081253c-4250-4b18-8097-28469ed16002\"\n   
     },\n    \"rs\": {\n      \"key\": \"Season\",\n      \"type\": \"string\",\n     
-    \"value\": \"Winter\"\n    }\n  }\n]"
-  _rsLastCachedKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"bbc3165b-dbe5-4645-932e-cce483199f48\"\n   
+    \"value\": \"Default\"\n    }\n  }\n]"
+  _rsLastCachedKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"ff6dde7a-d7f0-4980-8975-4a6ecc10189e\"\n   
     },\n    \"rs\": {\n      \"key\": \"ActiveHat\",\n      \"type\": \"int\",\n     
-    \"value\": 2\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"28b9117d-bc9b-4192-9814-88e99708cd01\"\n   
+    \"value\": 1\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"df494bfb-df75-45df-a061-aace94824d46\"\n   
     },\n    \"rs\": {\n      \"key\": \"Language\",\n      \"type\": \"string\",\n     
-    \"value\": \"English\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
-    \"0625c602-f446-4125-ad90-1bbcf47e3cfc\"\n    },\n    \"rs\": {\n      \"key\":
+    \"value\": \"Spanish\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
+    \"9a545089-7e54-4b4f-84ea-a2e00599866a\"\n    },\n    \"rs\": {\n      \"key\":
     \"CharacterSize\",\n      \"type\": \"float\",\n      \"value\": 1.0\n    }\n 
-    },\n  {\n    \"metadata\": {\n      \"entityId\": \"151147a9-1734-4115-861d-5ba12e963284\"\n   
+    },\n  {\n    \"metadata\": {\n      \"entityId\": \"f0605c8c-e8d8-4517-a9c2-b19bfaf3e137\"\n   
     },\n    \"rs\": {\n      \"key\": \"CharacterSpeed\",\n      \"type\": \"float\",\n     
-    \"value\": 5.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"1b249325-1785-4612-9b36-66742c9c1894\"\n   
+    \"value\": 5.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"6081253c-4250-4b18-8097-28469ed16002\"\n   
     },\n    \"rs\": {\n      \"key\": \"Season\",\n      \"type\": \"string\",\n     
-    \"value\": \"Winter\"\n    }\n  }\n]"
+    \"value\": \"Default\"\n    }\n  }\n]"
   _environments: "[\n  {\n    \"projectId\": \"911ed3cf-df79-425a-a19e-1a3a47b6768e\",\n   
     \"name\": \"demo\",\n    \"id\": \"d7d26eac-32dc-4bf7-93c8-57f8c720d8ce\",\n   
     \"isDefault\": false,\n    \"createdAt\": \"2022-09-29T16:46:42Z\",\n    \"updatedAt\":
