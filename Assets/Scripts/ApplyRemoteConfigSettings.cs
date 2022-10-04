@@ -96,7 +96,7 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
 
         // Set the environment ID: 
         // Defaults to Production, unless Development Build is Checked
-        // RemoteConfigService.Instance.SetEnvironmentID("951304dd-2b96-421c-ace2-a944d56b2948");
+        //RemoteConfigService.Instance.SetEnvironmentID("d7d26eac-32dc-4bf7-93c8-57f8c720d8ce");
 
         RemoteConfigService.Instance.FetchCompleted += RemoteConfigLoaded;
     }
@@ -115,26 +115,12 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
             case ConfigOrigin.Remote:
                 Debug.Log("New settings loaded this session; update values accordingly.");
 
-                // Fetch and set Remote Config value for Language
-                language = RemoteConfigService.Instance.appConfig.GetString("Language");
-
-                // Call the SetLocalization Function passing in the language string as a parameter
-                if(StartButtonText != null)
-                {
-                    SetLocalization(language);
-                }
-
                 // Assign the rest of the local variables to the Remote Config Setting equivalents
 
                 season = RemoteConfigService.Instance.appConfig.GetString("Season");
+                Debug.Log("Read Season: " + season);
 
                 activeHat = RemoteConfigService.Instance.appConfig.GetInt("ActiveHat");
-
-                characterSize = RemoteConfigService.Instance.appConfig.GetFloat("CharacterSize");
- 
-                characterSpeed = RemoteConfigService.Instance.appConfig.GetFloat("CharacterSpeed");
-
-                // End Case
                 break;
         }
     }
@@ -145,39 +131,6 @@ public class ApplyRemoteConfigSettings : MonoBehaviour
         RemoteConfigService.Instance.FetchConfigs<userAttributes, appAttributes>(new userAttributes(){}, new appAttributes(){});
 
         RemoteConfigService.Instance.FetchCompleted += RemoteConfigLoaded;
-    }
-
-    // Can also use a Switch / Case check, or store the localization variable in a Scriptable Object to hold the 
-    //variable for the new language for more areas of the game to reference
-    public void SetLocalization(string str)
-    {
-        if (str == "English")
-        {
-            StartButtonText.GetComponent<Text>().text = "Start";
-            StoreButtonText.GetComponent<Text>().text = "Store";
-            Debug.Log("English Localization Set!");
-        }
-
-        else if (str == "Spanish")
-        {
-            StartButtonText.GetComponent<Text>().text = "Comienzo";
-            StoreButtonText.GetComponent<Text>().text = "Tienda";
-            Debug.Log("Spanish Localization Set!");
-        }
-
-        else if (str == "French")
-        {
-            StartButtonText.GetComponent<Text>().text = "Bienvennue";
-            StoreButtonText.GetComponent<Text>().text = "Depanneur";
-            Debug.Log("French Localization Set!");
-        }
-
-        else if (str == "German")
-        {
-            StartButtonText.GetComponent<Text>().text = "Abspielen";
-            StoreButtonText.GetComponent<Text>().text = "Einkaufen";
-            Debug.Log("German Localization Set!");
-        }
     }
 }
 

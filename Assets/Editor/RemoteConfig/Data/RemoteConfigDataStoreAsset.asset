@@ -12,34 +12,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"c3a5972c-7cae-4a4f-91d9-26b85553dc87\"\n   
+  _rsKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"bbc3165b-dbe5-4645-932e-cce483199f48\"\n   
     },\n    \"rs\": {\n      \"key\": \"ActiveHat\",\n      \"type\": \"int\",\n     
-    \"value\": 2\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"6a409ac2-4cd8-40e4-8c9e-a4bebcd2c11b\"\n   
+    \"value\": 2\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"28b9117d-bc9b-4192-9814-88e99708cd01\"\n   
     },\n    \"rs\": {\n      \"key\": \"Language\",\n      \"type\": \"string\",\n     
     \"value\": \"English\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
-    \"38ac95fe-c553-4b3d-a979-99c66d1d1d7a\"\n    },\n    \"rs\": {\n      \"key\":
+    \"0625c602-f446-4125-ad90-1bbcf47e3cfc\"\n    },\n    \"rs\": {\n      \"key\":
     \"CharacterSize\",\n      \"type\": \"float\",\n      \"value\": 1.0\n    }\n 
-    },\n  {\n    \"metadata\": {\n      \"entityId\": \"c5278fdd-c68e-4b2f-8855-5f2201cbf69c\"\n   
+    },\n  {\n    \"metadata\": {\n      \"entityId\": \"151147a9-1734-4115-861d-5ba12e963284\"\n   
     },\n    \"rs\": {\n      \"key\": \"CharacterSpeed\",\n      \"type\": \"float\",\n     
-    \"value\": 5.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"461db9ee-58c9-47dc-a7a4-8468430e69cf\"\n   
+    \"value\": 5.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"1b249325-1785-4612-9b36-66742c9c1894\"\n   
     },\n    \"rs\": {\n      \"key\": \"Season\",\n      \"type\": \"string\",\n     
     \"value\": \"Winter\"\n    }\n  }\n]"
-  _rsLastCachedKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"c3a5972c-7cae-4a4f-91d9-26b85553dc87\"\n   
+  _rsLastCachedKeyList: "[\n  {\n    \"metadata\": {\n      \"entityId\": \"bbc3165b-dbe5-4645-932e-cce483199f48\"\n   
     },\n    \"rs\": {\n      \"key\": \"ActiveHat\",\n      \"type\": \"int\",\n     
-    \"value\": 2\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"6a409ac2-4cd8-40e4-8c9e-a4bebcd2c11b\"\n   
+    \"value\": 2\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"28b9117d-bc9b-4192-9814-88e99708cd01\"\n   
     },\n    \"rs\": {\n      \"key\": \"Language\",\n      \"type\": \"string\",\n     
     \"value\": \"English\"\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\":
-    \"38ac95fe-c553-4b3d-a979-99c66d1d1d7a\"\n    },\n    \"rs\": {\n      \"key\":
+    \"0625c602-f446-4125-ad90-1bbcf47e3cfc\"\n    },\n    \"rs\": {\n      \"key\":
     \"CharacterSize\",\n      \"type\": \"float\",\n      \"value\": 1.0\n    }\n 
-    },\n  {\n    \"metadata\": {\n      \"entityId\": \"c5278fdd-c68e-4b2f-8855-5f2201cbf69c\"\n   
+    },\n  {\n    \"metadata\": {\n      \"entityId\": \"151147a9-1734-4115-861d-5ba12e963284\"\n   
     },\n    \"rs\": {\n      \"key\": \"CharacterSpeed\",\n      \"type\": \"float\",\n     
-    \"value\": 5.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"461db9ee-58c9-47dc-a7a4-8468430e69cf\"\n   
+    \"value\": 5.0\n    }\n  },\n  {\n    \"metadata\": {\n      \"entityId\": \"1b249325-1785-4612-9b36-66742c9c1894\"\n   
     },\n    \"rs\": {\n      \"key\": \"Season\",\n      \"type\": \"string\",\n     
     \"value\": \"Winter\"\n    }\n  }\n]"
   _environments: "[\n  {\n    \"projectId\": \"911ed3cf-df79-425a-a19e-1a3a47b6768e\",\n   
-    \"name\": \"production\",\n    \"id\": \"806936f0-4b95-4760-8589-82e2a8ea5ffe\",\n   
-    \"isDefault\": true,\n    \"createdAt\": \"2022-04-13T20:16:19Z\",\n    \"updatedAt\":
-    \"2022-04-13T20:16:19Z\"\n  },\n  {\n    \"projectId\": \"911ed3cf-df79-425a-a19e-1a3a47b6768e\",\n   
     \"name\": \"demo\",\n    \"id\": \"d7d26eac-32dc-4bf7-93c8-57f8c720d8ce\",\n   
     \"isDefault\": false,\n    \"createdAt\": \"2022-09-29T16:46:42Z\",\n    \"updatedAt\":
-    \"2022-09-29T16:46:42Z\"\n  }\n]"
+    \"2022-09-29T16:46:42Z\"\n  },\n  {\n    \"projectId\": \"911ed3cf-df79-425a-a19e-1a3a47b6768e\",\n   
+    \"name\": \"production\",\n    \"id\": \"806936f0-4b95-4760-8589-82e2a8ea5ffe\",\n   
+    \"isDefault\": true,\n    \"createdAt\": \"2022-04-13T20:16:19Z\",\n    \"updatedAt\":
+    \"2022-04-13T20:16:19Z\"\n  }\n]"
