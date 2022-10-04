@@ -31,16 +31,6 @@ public class PlayerController : MonoBehaviour
     
     const float k_MinMovementDistance = 1.2f;
 
-    void Awake()
-    {
-        /*
-        rcInstance = ApplyRemoteConfigSettings.Instance;
-        
-        SetMovementSpeed(rcInstance.characterSpeed);
-        */
-        //SetCharacterSize(rcInstance.characterSize);
-    }
-
     void Start()
     {   
         m_Rigidbody = GetComponent<Rigidbody>();

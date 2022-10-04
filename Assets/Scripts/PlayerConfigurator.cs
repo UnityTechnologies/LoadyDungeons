@@ -21,31 +21,7 @@ public class PlayerConfigurator : MonoBehaviour
         //remoteConfigScript.FetchConfigs();
         
         //If the condition is met, then a hat has been unlocked
-        if(GameManager.s_ActiveHat >= 0)
-        {
-            SetHat(string.Format("Hat{0:00}", UnityEngine.Random.Range(0, 4)));
-
-            /*// Fetch the correct hat variable from the ApplyRemoteConfigSettings instance
-            if (ApplyRemoteConfigSettings.Instance.season == "Default")
-            {
-               //Debug.Log("Formatted String 2 " + string.Format("Hat{0:00}", remoteConfigScript.activeHat));
-
-                SetHat(string.Format("Hat{0:00}", remoteConfigScript.activeHat));
-            }
-
-            else if (ApplyRemoteConfigSettings.Instance.season == "Winter")
-            {
-                SetHat(string.Format("Hat{0:00}", "04"));
-            }
-
-            else if (ApplyRemoteConfigSettings.Instance.season == "Halloween")
-            {
-                SetHat(string.Format("Hat{0:00}", "05"));
-            }*/
-
-            //hatKey is an Addressable Label
-            //Debug.Log("Hat String: " + string.Format("Hat{0:00}", UnityEngine.Random.Range(0, 4)));
-        }
+        SetHat(string.Format("Hat{0:00}", ApplyRemoteConfigSettings.Instance.activeHat));
     }
 
     public void SetHat(string hatKey)
